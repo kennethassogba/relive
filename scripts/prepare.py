@@ -23,6 +23,7 @@ def main():
         check(path,item['sha256'])
         print(f'Verified {name}')
     directory=ROOT/'third_party/libigl'
+    directory.parent.mkdir(parents=True,exist_ok=True)
     if not directory.exists():
         archive=ROOT/'third_party/libigl.tar.gz'
         if not archive.exists():
