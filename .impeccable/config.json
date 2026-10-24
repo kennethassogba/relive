@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-24T14:00:11.475Z",
+        "reason": "Agent design decision, corroborated by independent finish review: Inter supports the requested restrained light developer workbench; recorded in DESIGN.md. User did not explicitly select the font."
+      }
+    ]
+  }
+}
