@@ -26,14 +26,15 @@ try{
   await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:'output/playwright/netlist-comparison.png',fullPage:true});report.screenshots.push('netlist-comparison.png');
   await page.getByRole('button',{name:'Branch from here'}).click();await page.getByRole('textbox',{name:'Branch name'}).fill('smoke-branch');await page.getByRole('button',{name:'Create branch'}).click();
   assert.equal((await api('state')).branches.netlist.name,'smoke-branch');report.checks.push('Branch dialog applies a named prepared-state branch');
+  await page.locator('.run-select').first().click();
   await page.getByRole('button',{name:'Code',exact:true}).click();
-  const source=page.getByRole('textbox',{name:'Native algorithm source'});await source.fill('this is an intentional compile error;');await page.getByRole('button',{name:'Save & run'}).click();
+  const source=page.getByRole('textbox',{name:'Native algorithm source'});await page.waitForFunction(()=>document.querySelector('.cm-content')?.textContent.includes('FANOUT_EXPONENT'));await source.fill('this is an intentional compile error;');await page.getByRole('button',{name:'Save & run'}).click();
   await until(async()=>{const r=await latest('netlist');return r.status==='error'?r:null;});
   await page.getByRole('alert').waitFor();assert.equal(await page.locator('html').getAttribute('data-rendered-run'),variant.id);
   await source.fill(original.netlist.source);await page.getByRole('button',{name:'Save & run'}).click();
   const recovered=await until(async()=>{const r=await latest('netlist');return r.status==='ready'&&r.id!==variant.id?r:null;});await wait(recovered.id);
   report.checks.push('Compilation error retains the last visible result; repairing the source recovers');
-  await page.getByRole('button',{name:'Close source editor'}).click();
+  await page.getByRole('button',{name:'Collapse bottom panel'}).click();
   for(const width of [320,768,1024,1440]){
     await page.setViewportSize({width,height:1000});
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow at ${width}px`);

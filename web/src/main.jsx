@@ -1,92 +1,572 @@
-import React,{useCallback,useEffect,useRef,useState} from 'react';
-import {createRoot} from 'react-dom/client';
-import {Activity,ArrowDownRight,ArrowUpRight,Box,Check,ChevronDown,ChevronRight,Clock3,Code2,Cpu,Download,FileCode2,GitBranch,History,Layers3,Link2,Loader2,Play,RotateCcw,ScanLine,Settings2,SplitSquareHorizontal,Terminal,Workflow,X} from 'lucide-react';
-import {api,number,ms} from './api';
-import {MeshViewport,NetlistViewport} from './Viewport';
-import SourceEditor from './SourceEditor';
-import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-500.css';
-import '@fontsource/inter/latin-600.css';
-import './style.css';
-
-const paramsDefault={netlist:{parts:4,passes:12,seed:42,imbalance:.05},mesh:{ratio:.2,feature_weight:40}};
-const stateLabels={queued:'Queued',compiling:'Compiling native code',preparing:'Preparing data',running:'Running algorithm',ready:'Watching for changes',error:'Build failed'};
-function Logo(){return <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#20242b"/><path d="M18.5 9A7 7 0 1 0 20 15M18.5 5v5h-5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>;}
-function Stat({label,value,detail}){return <div className="stat"><span>{label}</span><strong>{value}</strong><small>{detail}</small></div>;}
-
-function App(){
-  const [state,setState]=useState(null),[project,setProject]=useState(()=>new URLSearchParams(location.search).get('project')||'netlist'),[selected,setSelected]=useState(null),[pinned,setPinned]=useState(null);
-  const [left,setLeft]=useState(null),[right,setRight]=useState(null),[prepared,setPrepared]=useState(null),[loadedId,setLoadedId]=useState(null),[error,setError]=useState(''),[online,setOnline]=useState(true);
-  const [editor,setEditor]=useState(false),[wireframe,setWireframe]=useState(false),[errorMap,setErrorMap]=useState(false),[showCuts,setShowCuts]=useState(false),[inspected,setInspected]=useState('');
-  const [params,setParams]=useState(paramsDefault.netlist),[tab,setTab]=useState('history'),[branchName,setBranchName]=useState(''),[branchDialog,setBranchDialog]=useState(false);
-  const camera=useRef({yaw:.25,pitch:.08,distance:1.8}),acknowledged=useRef(new Set()),sessionStart=useRef(Date.now()*1e6),resultCache=useRef(new Map()),preparedCache=useRef(new Map()),dialog=useRef();
-  const dataset=state?.projects[project]?.dataset|| (project.startsWith('mesh')?'mesh':'netlist');
-  const refresh=useCallback(async()=>{try{setState(await api('state'));setOnline(true);}catch(e){setOnline(false);}},[]);
-  useEffect(()=>{refresh();const events=new EventSource('/api/events');events.onmessage=e=>{if(e.data!=='ping')refresh();};events.onerror=()=>setOnline(false);return()=>events.close();},[refresh]);
-  useEffect(()=>{if(state?.projects[project])setParams(state.branches[project].params);},[project,state?.projects[project]?.source]);
-  const runs=(state?.runs||[]).filter(r=>r.project===project).slice().reverse();
-  const current=selected?runs.find(r=>r.id===selected):runs.find(r=>r.status==='ready');
-  const reference=pinned?(state?.runs||[]).find(r=>r.id===pinned):null;
-  const status=state?.status[project]?.phase||'idle';const busy=['queued','compiling','preparing','running'].includes(status);
-  const latestError=runs[0]?.status==='error'?runs[0]:null;
-  useEffect(()=>{
-    let cancelled=false;
-    const load=async()=>{
-      if(!current){setRight(null);setPrepared(null);setLeft(null);setLoadedId(null);return;}
-      try{
-        const result=async id=>{if(!resultCache.current.has(id)){resultCache.current.set(id,await api('result/'+id));if(resultCache.current.size>12)resultCache.current.delete(resultCache.current.keys().next().value);}return resultCache.current.get(id);};
-        if(!preparedCache.current.has(current.prepared_id))preparedCache.current.set(current.prepared_id,await api('prepared/'+current.prepared_id));
-        const [r,l]=await Promise.all([result(current.id),reference?result(reference.id):null]);
-        if(!cancelled){setPrepared(preparedCache.current.get(current.prepared_id));setRight(r);setLeft(l);setLoadedId(current.id);}
-      }catch(e){if(!cancelled)setError(e.message);}
-    };load();return()=>{cancelled=true;};
-  },[current?.id,reference?.id]);
-  useEffect(()=>{if(branchDialog){dialog.current.showModal();}else dialog.current?.close();},[branchDialog]);
-  const onRendered=useCallback(async id=>{
-    if(!id||acknowledged.current.has(id))return;
-    const run=state?.runs.find(r=>r.id===id);
-    if(!run||run.started_ns<sessionStart.current||run.paint_ms!=null)return;
-    acknowledged.current.add(id);
-    document.documentElement.dataset.renderedRun=id;
-    try{await api('paint',{id});await refresh();}catch(e){setError(e.message);}
-  },[state,refresh]);
-  const changeProject=p=>{setProject(p);setSelected(null);setPinned(null);setRight(null);setLeft(null);setPrepared(null);setLoadedId(null);setInspected('');setParams(paramsDefault[p.startsWith('mesh')?'mesh':'netlist']);history.replaceState({},'', '?project='+p);};
-  const run=async fresh=>{setSelected(null);setError('');try{await api('run',{project,params,fresh});await refresh();}catch(e){setError(e.message);}};
-  const replay=async()=>{setSelected(null);try{await api('replay',{id:current.id});refresh();}catch(e){setError(e.message);}};
-  const branch=async e=>{e.preventDefault();try{await api('branch',{id:current.id,name:branchName});setParams(current.params);setBranchDialog(false);setSelected(null);refresh();}catch(e){setError(e.message);}};
-  const restore=async()=>{try{const file=await api('source/'+project);await api('restore',{id:current.id,base_sha256:file.sha256});setSelected(null);setEditor(false);refresh();}catch(e){setError(e.message);}};
-  const metric=right?.metrics,base=left?.metrics;const count=prepared?.meta;
-  const tryVariant=async()=>{
-    try{const f=await api('source/'+project);const source=dataset==='netlist'?f.source.replace(/FANOUT_EXPONENT = [\d.]+/,'FANOUT_EXPONENT = 1.0'):f.source.replace(/FEATURE_BIAS(?:\: f64)? = [\d.]+/,project==='mesh-rust'?'FEATURE_BIAS: f64 = 8.0':'FEATURE_BIAS = 8.0');
-      if(source===f.source){setEditor(true);return;}
-      if(current){setPinned(current.id);await api('branch',{id:current.id,name:dataset==='netlist'?'fanout-aware':'preserve-features'});}
-      setSelected(null);await api('save',{project,source,base_sha256:f.sha256});refresh();
-    }catch(e){setError(e.message);}
+import React, { useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
+import * as Tabs from "@radix-ui/react-tabs";
+import * as Dialog from "@radix-ui/react-dialog";
+import {
+  Cpu,
+  Box,
+  Play,
+  GitBranch,
+  Code2,
+  PanelLeft,
+  PanelRight,
+  ChevronDown,
+  ChevronUp,
+  Link2,
+  RotateCcw,
+  X,
+  Loader2,
+  Check,
+  ScanLine,
+  Activity,
+  Workflow,
+} from "lucide-react";
+import { ms } from "./api";
+import { useWorkspace } from "./useWorkspace";
+import { CodeDock } from "./CodeDock";
+import { Inspector } from "./Inspector";
+import { Experiments } from "./Experiments";
+import { MeshViewport, NetlistViewport } from "./Viewport";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "./style.css";
+const phases = {
+  idle: "Ready",
+  queued: "Queued",
+  compiling: "Compiling",
+  preparing: "Preparing input",
+  running: "Running",
+  ready: "Watching files",
+  error: "Build failed",
+};
+function App() {
+  const w = useWorkspace();
+  const [navigation, setNavigation] = useState(() => innerWidth >= 1000),
+    [inspector, setInspector] = useState(() => innerWidth >= 1000),
+    [dock, setDock] = useState(false),
+    [tab, setTab] = useState("code");
+  const [wireframe, setWireframe] = useState(false),
+    [errorMap, setErrorMap] = useState(false),
+    [cuts, setCuts] = useState(false),
+    [inspection, setInspection] = useState(""),
+    [reset, setReset] = useState(0);
+  const [dialog, setDialog] = useState(false),
+    [name, setName] = useState("");
+  useEffect(() => {
+    const key = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+        e.preventDefault();
+        if (!w.busy) w.run();
+      }
+      if (e.key === "Escape" && innerWidth < 1000) {
+        setNavigation(false);
+        setInspector(false);
+      }
+    };
+    window.addEventListener("keydown", key);
+    return () => window.removeEventListener("keydown", key);
+  }, [w.busy, w.run]);
+  useEffect(() => {
+    const q = matchMedia("(min-width:1000px)");
+    const resize = () => {
+      setNavigation(q.matches);
+      setInspector(q.matches);
+    };
+    q.addEventListener("change", resize);
+    return () => q.removeEventListener("change", resize);
+  }, []);
+  const openCode = () => {
+    setTab("code");
+    setDock(true);
   };
-  const cutDelta=base?metric?.cut_nets-base.cut_nets:null;
-  return <div className="app">
-    <aside className="sidebar"><a className="brand" href="/"><Logo/><span>relive<span className="alpha">alpha</span></span></a>
-      <div className="workspace-label"><span className="workspace-icon">k</span><span>Native workspace<small>Local session</small></span><ChevronDown size={14}/></div>
-      <div className="nav-section">EXPERIMENTS</div>
-      <nav aria-label="Examples"><button aria-label="PicoRV32 Netlist partitioning" className={dataset==='netlist'?'active':''} onClick={()=>changeProject('netlist')}><Cpu size={17}/><span>PicoRV32<small>Netlist partitioning</small></span></button><button aria-label="Jerry the ogre Mesh simplification" className={dataset==='mesh'?'active':''} onClick={()=>changeProject('mesh-cpp')}><Box size={17}/><span>Jerry the ogre<small>Mesh simplification</small></span></button></nav>
-      <div className="sidebar-bottom"><div className="local-indicator"><span className={online?'dot':'dot offline'}/>{online?'Connected to localhost':'Reconnecting…'}</div><div className="runtime-note"><Terminal size={14}/><span>C++ & Rust runtime<small>Everything stays on this machine.</small></span></div><a href="https://github.com/kennethassogba/relive" target="_blank" rel="noreferrer">Source & documentation <ArrowUpRight size={14}/></a></div>
-    </aside>
-    <main><header className="topbar"><div><span className="subtle">Workspace</span><ChevronRight size={14}/><span>{dataset==='netlist'?'PicoRV32':'Jerry the ogre'}</span></div><div className="watch-state" role="status">{busy?<Loader2 size={14} className="spin"/>:<span className="dot"/>}{stateLabels[status]||'Ready to prepare'}<kbd>LOCAL</kbd></div></header>
-      <div className="content"><div className="page-heading"><div><div className="eyebrow">{dataset==='netlist'?'01 / CIRCUITS':'02 / GEOMETRY'}</div><h1>{dataset==='netlist'?'Partition a processor.':'Find the edges worth keeping.'}</h1><p>{dataset==='netlist'?'Edit the heuristic. Keep the netlist. Compare the cut.':'Change the collapse criterion on the same prepared mesh.'}</p></div><button className="primary run-button" onClick={()=>run(false)} disabled={busy}><Play size={15}/>{current?'Run again':'Prepare & run'}</button></div>
-      {(error||latestError)&&<div className="error-banner" role="alert"><div><strong>{error?'Action failed':'Native build failed. Your last result is still here.'}</strong><pre>{error||latestError.error}</pre></div><button onClick={()=>{setError('');if(latestError)setEditor(true);}} aria-label={error?'Dismiss error':'Open source to fix error'}>{error?<X size={16}/>:<Code2 size={16}/>}</button></div>}
-      <div className="experiment-bar"><div className="branch-name"><GitBranch size={15}/>{state?.branches[project]?.name||'main'}<span className="divider"/><span className="subtle">{current?'#'+current.id.slice(-8):'No runs yet'}</span>{selected&&<button className="text-button" onClick={()=>setSelected(null)}>Back to live</button>}</div><div className="bar-actions"><button onClick={()=>setEditor(!editor)} aria-expanded={editor}><Code2 size={15}/>Code</button><button disabled={!current} onClick={()=>{setBranchName('experiment-'+(runs.length+1));setBranchDialog(true);}}><GitBranch size={15}/>Branch from here</button></div></div>
-      <div className="metrics">{dataset==='netlist'?<><Stat label="CUT NETS" value={number(metric?.cut_nets)} detail={cutDelta!==null?`${cutDelta>0?'+':''}${number(cutDelta)} vs reference`:count?`of ${number(count.edges)} hyperedges`:'Connectivity measured on every net'}/><Stat label="CONNECTIVITY · λ − 1" value={number(metric?.connectivity)} detail="Sum of extra partitions per net"/><Stat label="IMBALANCE" value={metric?`${(metric.balance*100).toFixed(1)}%`:'—'} detail={`Maximum allowed: ${(params.imbalance*100).toFixed(0)}%`}/></>:<><Stat label="TRIANGLES" value={number(metric?.triangles)} detail={count?`from ${number(count.triangles)} input faces`:'Original topology stays available'}/><Stat label="RMS SURFACE ERROR" value={metric?`${(metric.rms_error*100).toFixed(3)}%`:'—'} detail="Input vertices → output surface / diagonal"/><Stat label="ALGORITHM" value={ms(metric?.algorithm_ms)} detail={metric?`+ ${ms(metric.evaluation_ms)} error evaluation`:'Native libigl edge collapse'}/></>}<Stat label="SAVE → VISIBLE" value={ms(current?.paint_ms)} detail={current?.paint_ms?'Includes build, run & browser acknowledgement':current?`${ms(current.ready_ms)} to result · awaiting live paint`:'Measured when a new result is drawn'}/></div>
-      <section className="comparison" aria-label="Result comparison"><div className="comparison-tools"><span><SplitSquareHorizontal size={15}/>Compare</span><div>{dataset==='mesh'?<><button className={wireframe?'pressed':''} aria-pressed={wireframe} onClick={()=>setWireframe(!wireframe)}><ScanLine size={14}/>Wireframe</button><button className={errorMap?'pressed':''} aria-pressed={errorMap} onClick={()=>setErrorMap(!errorMap)}><Activity size={14}/>Error map</button></>:<button className={showCuts?'pressed':''} aria-pressed={showCuts} onClick={()=>setShowCuts(!showCuts)}><Workflow size={14}/>Cut connections</button>}<span className="sync"><Link2 size={13}/>{dataset==='mesh'?'Cameras synced':'Layout locked'}</span></div></div>
-      <div className="view-labels"><div><span className="view-tag">A</span><span>{reference?reference.branch:'Prepared input'}<small>{reference?'#'+reference.id.slice(-8):dataset==='netlist'?'PicoRV32 · Yosys netlist':'Jerry the ogre · Keenan Crane'}</small></span>{reference&&<button aria-label="Clear reference" onClick={()=>setPinned(null)}><X size={14}/></button>}</div><div><span className="view-tag blue">B</span><span>{current?.branch||'Your next experiment'}<small>{current?'#'+current.id.slice(-8):'Waiting for the first run'}</small></span>{busy?<span className="view-status"><Loader2 size={12} className="spin"/>Updating</span>:current&&<span className="view-status"><span className="dot"/>Native result</span>}</div></div>
-      <div className="viewports">{prepared&&right?(dataset==='mesh'?<MeshViewport prepared={prepared} left={left} right={right} wireframe={wireframe} errorMap={errorMap} camera={camera} runId={loadedId} onRendered={onRendered}/>:<NetlistViewport prepared={prepared} left={left} right={right} showCuts={showCuts} runId={loadedId} onRendered={onRendered} onInspect={setInspected}/>):<div className="empty-view"><div className="empty-icon">{dataset==='netlist'?<Cpu size={32}/>:<Box size={32}/>}</div><h2>{busy?stateLabels[status]:'A fresh starting point.'}</h2><p>{busy?'Preparing your first native experiment.':`Load ${dataset==='netlist'?'the synthesized processor':'the original mesh'} once, then iterate from the same state.`}</p>{!busy&&<button onClick={()=>run(false)}><Play size={14}/>Prepare & run</button>}</div>}<div className="split-line"/></div>
-      <div className="viewport-footer">{dataset==='netlist'?<div className="legend">{Array.from({length:current?.params.parts||4},(_,i)=><span key={i}><i style={{background:['#3478e5','#e88b43','#9b70d4','#df6d95','#5eafd5','#ac743e','#355290','#dd4b4b'][i%8]}}/>P{i}</span>)}</div>:errorMap?<div className="error-scale"><span>0%</span><i/><span>≥1% of diagonal</span></div>:<span className="subtle">Drag to orbit · Scroll to zoom · Arrow keys supported</span>}<span className="subtle">{inspected||(dataset==='netlist'?'Connectivity ordering · not physical placement':'CC0 · source mesh preserved')}</span></div></section>
-      <div className="below"><section className="history-panel"><div className="section-tabs"><button className={tab==='history'?'selected':''} onClick={()=>setTab('history')}><History size={15}/>Experiments <span>{runs.length}</span></button><button className={tab==='timing'?'selected':''} onClick={()=>setTab('timing')}><Clock3 size={15}/>Timing</button><div className="tab-spacer"/>{current&&<button className="text-button" onClick={tryVariant}>{dataset==='netlist'?'Try fanout weighting':'Try feature protection'}<ArrowUpRight size={14}/></button>}</div>
-        {tab==='history'?<div className="run-list">{!runs.length?<p className="empty-history">Each run saves its native code, parameters and prepared snapshot.</p>:runs.slice(0,12).map(r=><div className={'run-row '+(current?.id===r.id?'current':'')} key={r.id}><button className="run-select" onClick={()=>{if(r.status==='ready')setSelected(r.id);else setError(r.error);}}><span className={'history-dot '+(r.status==='error'?'failed':'')}/><span><strong>{r.branch}</strong><small>{r.language==='rust'?'Rust':'C++'} · {r.reason} · {r.source_sha256.slice(0,7)}</small></span><span className="run-value">{r.status==='error'?'Failed':dataset==='netlist'?`${number(r.metrics?.cut_nets)} cuts`:`${number(r.metrics?.triangles)} faces`}<small>{ms(r.paint_ms??r.ready_ms)}</small></span></button><button className={'pin-button '+(pinned===r.id?'pressed':'')} disabled={r.status!=='ready'||r.prepared_id!==current?.prepared_id} onClick={()=>setPinned(pinned===r.id?null:r.id)} aria-label={`Use experiment ${r.id.slice(-8)} as reference A`}>A</button></div>)}</div>:<div className="timing-panel">{current?<><div><span>Compile {current.cache_hit?'(cached)':''}</span><strong>{ms(current.compile_ms)}</strong></div><div><span>Prepared host access</span><strong>{ms(current.prepare_ms)}</strong></div><div><span>Fork, native run & serialize</span><strong>{ms(current.worker_ms)}</strong></div><div><span>Save → result ready</span><strong>{ms(current.ready_ms)}</strong></div><div><span>Save → browser acknowledgement</span><strong>{ms(current.paint_ms)}</strong></div><p>Classic reruns use the same compiler flags and input, with a fresh process, preparation and plugin build. OS file caches stay warm.</p><button onClick={()=>run(true)} disabled={busy}><RotateCcw size={14}/>Measure a classic cycle</button></>:<p>Run an experiment to see its timings.</p>}</div>}
-        {current&&<div className="history-actions"><button onClick={replay} disabled={busy}><Play size={13}/>Replay</button><button onClick={restore} disabled={busy}><RotateCcw size={13}/>Restore code</button><a href={'/api/export/'+current.id} download={'relive-'+current.id+'.zip'}><Download size={13}/>Export experiment</a></div>}
-      </section><section className="parameters"><div className="parameters-heading"><Settings2 size={15}/><h2>Run parameters</h2>{dataset==='mesh'&&<select aria-label="Native language" value={project} onChange={e=>changeProject(e.target.value)}><option value="mesh-cpp">C++</option><option value="mesh-rust">Rust</option></select>}</div><div className="parameter-fields">{dataset==='netlist'?<><label>Partitions<select value={params.parts||4} onChange={e=>setParams({...params,parts:+e.target.value})}>{[2,4,8].map(n=><option key={n}>{n}</option>)}</select></label><label>Refinement passes<input type="number" min="1" max="100" value={params.passes||12} onChange={e=>setParams({...params,passes:+e.target.value})}/></label><label>Seed<input type="number" min="0" value={params.seed??42} onChange={e=>setParams({...params,seed:+e.target.value})}/></label></>:<><label>Keep triangles<span>{Math.round((params.ratio||.2)*100)}%</span><input type="range" min=".05" max=".8" step=".05" value={params.ratio||.2} onChange={e=>setParams({...params,ratio:+e.target.value})}/></label><label>Feature weight<input type="number" min="0" max="1000" value={params.feature_weight??40} onChange={e=>setParams({...params,feature_weight:+e.target.value})}/></label></>}</div><div className="snapshot"><Layers3 size={16}/><div><strong>{current?'Prepared state retained':'Prepared state'}</strong><span>{current?`${(count?.bytes/1048576).toFixed(1)} MB · ${current.prepared_id.slice(0,10)}`:'Created on your first run'}</span></div></div></section></div>
-      <SourceEditor project={project} open={editor} onClose={()=>setEditor(false)} onError={setError}/>
-      <footer className="page-footer"><span>relive / native algorithm studio</span><span>{dataset==='netlist'?'PicoRV32 · ISC license':'libigl · MPL-2.0 / Jerry · CC0'}</span></footer></div>
-    </main><dialog ref={dialog} onCancel={()=>setBranchDialog(false)}><form onSubmit={branch}><div className="dialog-heading"><GitBranch size={20}/><button type="button" onClick={()=>setBranchDialog(false)} aria-label="Close branch dialog"><X size={18}/></button></div><h2>Branch from this experiment</h2><p>The branch reuses this prepared snapshot and its parameters. Your working code stays in your editor.</p><label>Branch name<input autoFocus required maxLength={60} value={branchName} onChange={e=>setBranchName(e.target.value)}/></label><button className="primary" type="submit">Create branch</button></form></dialog>
-  </div>;
+  const branch = () => {
+    setName("experiment-" + (w.runs.length + 1));
+    setDialog(true);
+  };
+  const resetView = () => {
+    Object.assign(w.camera.current, { yaw: 0.25, pitch: 0.08, distance: 1.55 });
+    setReset((v) => v + 1);
+  };
+  const current = w.current,
+    scene = w.scene;
+  const timings = current
+    ? [
+        [
+          "Compile" + (current.cache_hit ? " (cached)" : ""),
+          current.compile_ms,
+        ],
+        ["Prepared host access", current.prepare_ms],
+        ["Native worker + serialization", current.worker_ms],
+        ["Save → result ready", current.ready_ms],
+        ["Save → browser draw", current.paint_ms],
+      ]
+    : [];
+  return (
+    <div className="workbench">
+      <header className="command-bar">
+        <a href="/" className="brand" aria-label="Relive home">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 5h7a6 6 0 0 1 0 12H6m0-12v14m0-8h6m1 6 5 3"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+          <span>Relive</span>
+        </a>
+        <span className="header-divider" />
+        <h1>{w.dataset === "netlist" ? "PicoRV32" : "Jerry the ogre"}</h1>
+        <span className="project-kind">
+          {w.dataset === "netlist" ? "Partitioning" : "Simplification"}
+        </span>
+        <div className="command-spacer" />
+        <button className="branch-control" onClick={branch} disabled={!current}>
+          <GitBranch size={14} />
+          <span>{w.state?.branches[w.project]?.name || "main"}</span>
+          <ChevronDown size={13} />
+        </button>
+        <button className="primary" onClick={() => w.run()} disabled={w.busy}>
+          {w.busy ? <Loader2 className="spin" size={14} /> : <Play size={14} />}
+          Run<kbd>⌃ ↵</kbd>
+        </button>
+      </header>
+      <div className="project-bar">
+        <button
+          className="icon-button"
+          aria-label="Toggle experiments"
+          aria-expanded={navigation}
+          onClick={() => {
+            setNavigation(!navigation);
+            if (innerWidth < 1000) setInspector(false);
+          }}
+        >
+          <PanelLeft size={16} />
+        </button>
+        <nav aria-label="Examples">
+          <button
+            className={w.dataset === "netlist" ? "active" : ""}
+            aria-label="PicoRV32 Netlist partitioning"
+            onClick={() => {
+              w.changeProject("netlist");
+              setInspection("");
+            }}
+          >
+            <Cpu size={15} />
+            PicoRV32
+          </button>
+          <button
+            className={w.dataset === "mesh" ? "active" : ""}
+            aria-label="Jerry the ogre Mesh simplification"
+            onClick={() => {
+              w.changeProject("mesh-cpp");
+              setInspection("");
+            }}
+          >
+            <Box size={15} />
+            Jerry
+          </button>
+        </nav>
+        <div className="command-spacer" />
+        <button onClick={openCode} aria-label="Code">
+          <Code2 size={15} />
+          <span>Code</span>
+        </button>
+        <button
+          className="icon-button"
+          aria-label="Toggle inspector"
+          aria-expanded={inspector}
+          onClick={() => {
+            setInspector(!inspector);
+            if (innerWidth < 1000) setNavigation(false);
+          }}
+        >
+          <PanelRight size={16} />
+        </button>
+      </div>
+      <div
+        className={
+          "workspace " +
+          (navigation ? "with-navigation " : "") +
+          (inspector ? "with-inspector" : "")
+        }
+      >
+        {(navigation || inspector) && (
+          <button
+            className="panel-scrim"
+            aria-label="Close side panels"
+            onClick={() => {
+              setNavigation(false);
+              setInspector(false);
+            }}
+          />
+        )}
+        {navigation && (
+          <aside className="experiment-navigator" aria-label="Experiments">
+            <Experiments w={w} onBranch={branch} onCode={openCode} />
+          </aside>
+        )}
+        <main className="working-area">
+          <section className="result-area" aria-label="Result comparison">
+            <div className="canvas-toolbar">
+              <span className="comparison-title">Compare</span>
+              <div className="command-spacer" />
+              {w.dataset === "mesh" ? (
+                <>
+                  <button
+                    aria-pressed={wireframe}
+                    onClick={() => setWireframe(!wireframe)}
+                  >
+                    <ScanLine size={14} />
+                    <span>Wireframe</span>
+                  </button>
+                  <button
+                    aria-pressed={errorMap}
+                    onClick={() => setErrorMap(!errorMap)}
+                  >
+                    <Activity size={14} />
+                    <span>Error map</span>
+                  </button>
+                </>
+              ) : (
+                <button aria-pressed={cuts} onClick={() => setCuts(!cuts)}>
+                  <Workflow size={14} />
+                  <span>Cut connections</span>
+                </button>
+              )}
+              <span className="sync-label">
+                <Link2 size={13} />
+                {w.dataset === "mesh" ? "Synced" : "Locked"}
+              </span>
+              <button
+                className="icon-button"
+                aria-label="Reset view"
+                title="Reset view"
+                onClick={resetView}
+              >
+                <RotateCcw size={14} />
+              </button>
+            </div>
+            {(w.error || w.failure) && (
+              <div className="build-error" role="alert">
+                <span>
+                  {w.error
+                    ? "Action failed"
+                    : "Build failed. Last result retained."}
+                </span>
+                <button
+                  onClick={() => {
+                    setTab("console");
+                    setDock(true);
+                  }}
+                >
+                  View console
+                </button>
+                {w.error && (
+                  <button
+                    className="icon-button"
+                    aria-label="Dismiss error"
+                    onClick={() => w.setError("")}
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+            )}
+            <div className="viewport-labels">
+              <div>
+                <span className="view-tag">A</span>
+                <span>
+                  {w.reference?.branch || "Prepared input"}
+                  <small>
+                    {w.reference?.source_sha256.slice(0, 7) ||
+                      (w.dataset === "mesh"
+                        ? "39,856 triangles"
+                        : "8,477 cells")}
+                  </small>
+                </span>
+                {w.reference && (
+                  <button
+                    className="icon-button"
+                    aria-label="Clear reference"
+                    onClick={() => w.setPinned(null)}
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+              <div>
+                <span className="view-tag b">B</span>
+                <span>
+                  {current?.branch || "Result"}
+                  <small>
+                    {current?.source_sha256.slice(0, 7) || "No run yet"}
+                  </small>
+                </span>
+                {w.selected && (
+                  <button
+                    className="link-button live-control"
+                    onClick={() => w.setSelected(null)}
+                  >
+                    Latest
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="viewports">
+              {scene ? (
+                w.dataset === "mesh" ? (
+                  <MeshViewport
+                    {...scene}
+                    camera={w.camera}
+                    wireframe={wireframe}
+                    errorMap={errorMap}
+                    resetCamera={reset}
+                    runId={scene.id}
+                    onRendered={w.rendered}
+                  />
+                ) : (
+                  <NetlistViewport
+                    {...scene}
+                    showCuts={cuts}
+                    resetCamera={reset}
+                    runId={scene.id}
+                    onRendered={w.rendered}
+                    onInspect={setInspection}
+                  />
+                )
+              ) : (
+                <div className="empty-canvas">
+                  <strong>
+                    {w.dataset === "mesh"
+                      ? "Jerry the ogre"
+                      : "PicoRV32 netlist"}
+                  </strong>
+                  <p>
+                    {w.busy
+                      ? phases[w.phase]
+                      : "Prepare the input to start comparing native algorithms."}
+                  </p>
+                  <button disabled={w.busy} onClick={() => w.run()}>
+                    <Play size={14} />
+                    Prepare & run
+                  </button>
+                </div>
+              )}
+              <div className="split-line" />
+            </div>
+            <div className="canvas-footnote">
+              {w.dataset === "netlist" ? (
+                <div className="legend">
+                  {Array.from(
+                    { length: current?.params.parts || 4 },
+                    (_, i) => (
+                      <span key={i}>
+                        <i
+                          style={{
+                            background: [
+                              "#3478e5",
+                              "#e88b43",
+                              "#9b70d4",
+                              "#df6d95",
+                              "#5eafd5",
+                              "#ac743e",
+                              "#355290",
+                              "#dd4b4b",
+                            ][i % 8],
+                          }}
+                        />
+                        P{i}
+                      </span>
+                    ),
+                  )}
+                </div>
+              ) : errorMap ? (
+                <span className="error-scale">
+                  0%
+                  <i />
+                  ≥1% of diagonal
+                </span>
+              ) : (
+                <span>Drag to orbit · Scroll to zoom</span>
+              )}
+              <span className="canvas-detail">
+                {inspection ||
+                  (w.dataset === "netlist"
+                    ? "Scroll to zoom · drag to pan · click a cell"
+                    : "Shared camera · CC0 source")}
+              </span>
+            </div>
+          </section>
+          <Tabs.Root
+            className={"bottom-dock " + (dock ? "is-open" : "")}
+            value={tab}
+            onValueChange={(value) => {
+              setTab(value);
+              setDock(true);
+            }}
+          >
+            <div className="dock-toolbar">
+              <Tabs.List aria-label="Workspace panels">
+                <Tabs.Trigger value="code">Code</Tabs.Trigger>
+                <Tabs.Trigger value="timing">Timing</Tabs.Trigger>
+                <Tabs.Trigger value="console">
+                  Console{w.failure && <span className="error-count">1</span>}
+                </Tabs.Trigger>
+              </Tabs.List>
+              <div className="command-spacer" />
+              {w.dataset === "mesh" && (
+                <select
+                  aria-label="Native language"
+                  value={w.project}
+                  onChange={(e) => w.changeProject(e.target.value)}
+                >
+                  <option value="mesh-cpp">C++</option>
+                  <option value="mesh-rust">Rust</option>
+                </select>
+              )}
+              <button
+                className="icon-button"
+                aria-label={
+                  dock ? "Collapse bottom panel" : "Expand bottom panel"
+                }
+                onClick={() => setDock(!dock)}
+              >
+                {dock ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+              </button>
+            </div>
+            <Tabs.Content forceMount value="code" className="dock-content">
+              <CodeDock
+                project={w.project}
+                onError={w.setError}
+                onSaved={() => {
+                  w.setSelected(null);
+                  w.refresh();
+                }}
+                refreshKey={current?.id}
+              />
+            </Tabs.Content>
+            <Tabs.Content
+              forceMount
+              value="timing"
+              className="dock-content timing-content"
+            >
+              <table>
+                <tbody>
+                  {timings.map(([label, value]) => (
+                    <tr key={label}>
+                      <th scope="row">{label}</th>
+                      <td>{ms(value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div>
+                <p>
+                  Browser draw includes native compilation, execution, transfer
+                  and two animation frames. Classic cycles reload and prepare
+                  the same input.
+                </p>
+                <button disabled={w.busy} onClick={() => w.run(true)}>
+                  <RotateCcw size={14} />
+                  Measure a classic cycle
+                </button>
+              </div>
+            </Tabs.Content>
+            <Tabs.Content
+              forceMount
+              value="console"
+              className="dock-content console-content"
+            >
+              <pre>
+                {w.error ||
+                  w.failure?.error ||
+                  "No build errors. Watching native source files."}
+              </pre>
+            </Tabs.Content>
+          </Tabs.Root>
+        </main>
+        {inspector && (
+          <aside className="inspector" aria-label="Result inspector">
+            <Inspector w={w} />
+          </aside>
+        )}
+      </div>
+      <footer className="status-bar">
+        <span role="status">
+          {w.busy ? (
+            <Loader2 size={12} className="spin" />
+          ) : (
+            <span className={"status-dot " + (!w.online ? "offline" : "")} />
+          )}{" "}
+          {w.online ? phases[w.phase] : "Reconnecting"}
+        </span>
+        <span className="retained-status">
+          {current ? (
+            <>
+              <Check size={12} />
+              Input retained
+            </>
+          ) : (
+            "Local runtime"
+          )}
+        </span>
+        <div className="command-spacer" />
+        <span>
+          {current?.paint_ms != null
+            ? `${ms(current.paint_ms)} save → draw`
+            : "Save → draw: awaiting run"}
+        </span>
+        <span className="language-status">
+          {w.project === "mesh-rust" ? "Rust" : "C++"}
+        </span>
+      </footer>
+      <Dialog.Root open={dialog} onOpenChange={setDialog}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="dialog-overlay" />
+          <Dialog.Content className="branch-dialog">
+            <Dialog.Title>Branch from this experiment</Dialog.Title>
+            <Dialog.Description>
+              Reuse the prepared input and parameters. Your working source stays
+              in your editor.
+            </Dialog.Description>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                await w.branch(name);
+                setDialog(false);
+              }}
+            >
+              <label>
+                Branch name
+                <input
+                  required
+                  maxLength={60}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <button className="primary" type="submit">
+                Create branch
+              </button>
+            </form>
+            <Dialog.Close
+              className="dialog-close icon-button"
+              aria-label="Close branch dialog"
+            >
+              <X size={17} />
+            </Dialog.Close>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </div>
+  );
 }
-createRoot(document.getElementById('root')).render(<App/>);
+createRoot(document.getElementById("root")).render(<App />);

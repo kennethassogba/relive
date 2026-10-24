@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T13:55:06.443725+00:00",
+  "title": "Design System: Relive",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "canonical": "#245fca",
+        "tonalRamp": [
+          "oklch(15% 0.1776 261.15)",
+          "oklch(26% 0.1776 261.15)",
+          "oklch(38% 0.1776 261.15)",
+          "oklch(49% 0.1776 261.15)",
+          "oklch(61% 0.1776 261.15)",
+          "oklch(72% 0.1776 261.15)",
+          "oklch(84% 0.1776 261.15)",
+          "oklch(95% 0.1776 261.15)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Accent hover",
+        "canonical": "#194eac",
+        "tonalRamp": [
+          "oklch(15% 0.1608 260.96)",
+          "oklch(26% 0.1608 260.96)",
+          "oklch(38% 0.1608 260.96)",
+          "oklch(49% 0.1608 260.96)",
+          "oklch(61% 0.1608 260.96)",
+          "oklch(72% 0.1608 260.96)",
+          "oklch(84% 0.1608 260.96)",
+          "oklch(95% 0.1608 260.96)"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Selection",
+        "canonical": "#edf3ff",
+        "tonalRamp": [
+          "oklch(15% 0.0173 264.49)",
+          "oklch(26% 0.0173 264.49)",
+          "oklch(38% 0.0173 264.49)",
+          "oklch(49% 0.0173 264.49)",
+          "oklch(61% 0.0173 264.49)",
+          "oklch(72% 0.0173 264.49)",
+          "oklch(84% 0.0173 264.49)",
+          "oklch(95% 0.0173 264.49)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Foreground",
+        "canonical": "#22262b",
+        "tonalRamp": [
+          "oklch(15% 0.0110 254.03)",
+          "oklch(26% 0.0110 254.03)",
+          "oklch(38% 0.0110 254.03)",
+          "oklch(49% 0.0110 254.03)",
+          "oklch(61% 0.0110 254.03)",
+          "oklch(72% 0.0110 254.03)",
+          "oklch(84% 0.0110 254.03)",
+          "oklch(95% 0.0110 254.03)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#626872",
+        "tonalRamp": [
+          "oklch(15% 0.0174 260.71)",
+          "oklch(26% 0.0174 260.71)",
+          "oklch(38% 0.0174 260.71)",
+          "oklch(49% 0.0174 260.71)",
+          "oklch(61% 0.0174 260.71)",
+          "oklch(72% 0.0174 260.71)",
+          "oklch(84% 0.0174 260.71)",
+          "oklch(95% 0.0174 260.71)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#e5e7eb",
+        "tonalRamp": [
+          "oklch(15% 0.0058 264.53)",
+          "oklch(26% 0.0058 264.53)",
+          "oklch(38% 0.0058 264.53)",
+          "oklch(49% 0.0058 264.53)",
+          "oklch(61% 0.0058 264.53)",
+          "oklch(72% 0.0058 264.53)",
+          "oklch(84% 0.0058 264.53)",
+          "oklch(95% 0.0058 264.53)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Control border",
+        "canonical": "#d8dce2",
+        "tonalRamp": [
+          "oklch(15% 0.0093 258.34)",
+          "oklch(26% 0.0093 258.34)",
+          "oklch(38% 0.0093 258.34)",
+          "oklch(49% 0.0093 258.34)",
+          "oklch(61% 0.0093 258.34)",
+          "oklch(72% 0.0093 258.34)",
+          "oklch(84% 0.0093 258.34)",
+          "oklch(95% 0.0093 258.34)"
+        ]
+      },
+      "hover": {
+        "role": "neutral",
+        "displayName": "Hover",
+        "canonical": "#f1f3f6",
+        "tonalRamp": [
+          "oklch(15% 0.0045 258.32)",
+          "oklch(26% 0.0045 258.32)",
+          "oklch(38% 0.0045 258.32)",
+          "oklch(49% 0.0045 258.32)",
+          "oklch(61% 0.0045 258.32)",
+          "oklch(72% 0.0045 258.32)",
+          "oklch(84% 0.0045 258.32)",
+          "oklch(95% 0.0045 258.32)"
+        ]
+      },
+      "source-surface": {
+        "role": "neutral",
+        "displayName": "Source surface",
+        "canonical": "#fafbfc",
+        "tonalRamp": [
+          "oklch(15% 0.0017 247.84)",
+          "oklch(26% 0.0017 247.84)",
+          "oklch(38% 0.0017 247.84)",
+          "oklch(49% 0.0017 247.84)",
+          "oklch(61% 0.0017 247.84)",
+          "oklch(72% 0.0017 247.84)",
+          "oklch(84% 0.0017 247.84)",
+          "oklch(95% 0.0017 247.84)"
+        ]
+      },
+      "active-line": {
+        "role": "neutral",
+        "displayName": "Active line",
+        "canonical": "#f5f8fd",
+        "tonalRamp": [
+          "oklch(15% 0.0074 260.73)",
+          "oklch(26% 0.0074 260.73)",
+          "oklch(38% 0.0074 260.73)",
+          "oklch(49% 0.0074 260.73)",
+          "oklch(61% 0.0074 260.73)",
+          "oklch(72% 0.0074 260.73)",
+          "oklch(84% 0.0074 260.73)",
+          "oklch(95% 0.0074 260.73)"
+        ]
+      },
+      "error": {
+        "role": "secondary",
+        "displayName": "Error",
+        "canonical": "#a13d2c",
+        "tonalRamp": [
+          "oklch(15% 0.1365 31.86)",
+          "oklch(26% 0.1365 31.86)",
+          "oklch(38% 0.1365 31.86)",
+          "oklch(49% 0.1365 31.86)",
+          "oklch(61% 0.1365 31.86)",
+          "oklch(72% 0.1365 31.86)",
+          "oklch(84% 0.1365 31.86)",
+          "oklch(95% 0.1365 31.86)"
+        ]
+      },
+      "error-surface": {
+        "role": "secondary",
+        "displayName": "Error surface",
+        "canonical": "#fff7f4",
+        "tonalRamp": [
+          "oklch(15% 0.0095 41.89)",
+          "oklch(26% 0.0095 41.89)",
+          "oklch(38% 0.0095 41.89)",
+          "oklch(49% 0.0095 41.89)",
+          "oklch(61% 0.0095 41.89)",
+          "oklch(72% 0.0095 41.89)",
+          "oklch(84% 0.0095 41.89)",
+          "oklch(95% 0.0095 41.89)"
+        ]
+      },
+      "error-text": {
+        "role": "secondary",
+        "displayName": "Error text",
+        "canonical": "#9b3525",
+        "tonalRamp": [
+          "oklch(15% 0.1393 31.49)",
+          "oklch(26% 0.1393 31.49)",
+          "oklch(38% 0.1393 31.49)",
+          "oklch(49% 0.1393 31.49)",
+          "oklch(61% 0.1393 31.49)",
+          "oklch(72% 0.1393 31.49)",
+          "oklch(84% 0.1393 31.49)",
+          "oklch(95% 0.1393 31.49)"
+        ]
+      },
+      "mesh": {
+        "role": "secondary",
+        "displayName": "Mesh",
+        "canonical": "#9faec3",
+        "tonalRamp": [
+          "oklch(15% 0.0347 256.78)",
+          "oklch(26% 0.0347 256.78)",
+          "oklch(38% 0.0347 256.78)",
+          "oklch(49% 0.0347 256.78)",
+          "oklch(61% 0.0347 256.78)",
+          "oklch(72% 0.0347 256.78)",
+          "oklch(84% 0.0347 256.78)",
+          "oklch(95% 0.0347 256.78)"
+        ]
+      },
+      "input-cell": {
+        "role": "secondary",
+        "displayName": "Input cell",
+        "canonical": "#98a5b7",
+        "tonalRamp": [
+          "oklch(15% 0.0301 256.51)",
+          "oklch(26% 0.0301 256.51)",
+          "oklch(38% 0.0301 256.51)",
+          "oklch(49% 0.0301 256.51)",
+          "oklch(61% 0.0301 256.51)",
+          "oklch(72% 0.0301 256.51)",
+          "oklch(84% 0.0301 256.51)",
+          "oklch(95% 0.0301 256.51)"
+        ]
+      },
+      "error-low": {
+        "role": "secondary",
+        "displayName": "Error low",
+        "canonical": "#3279d8",
+        "tonalRamp": [
+          "oklch(15% 0.1619 256.92)",
+          "oklch(26% 0.1619 256.92)",
+          "oklch(38% 0.1619 256.92)",
+          "oklch(49% 0.1619 256.92)",
+          "oklch(61% 0.1619 256.92)",
+          "oklch(72% 0.1619 256.92)",
+          "oklch(84% 0.1619 256.92)",
+          "oklch(95% 0.1619 256.92)"
+        ]
+      },
+      "error-high": {
+        "role": "secondary",
+        "displayName": "Error high",
+        "canonical": "#f07636",
+        "tonalRamp": [
+          "oklch(15% 0.1683 45.48)",
+          "oklch(26% 0.1683 45.48)",
+          "oklch(38% 0.1683 45.48)",
+          "oklch(49% 0.1683 45.48)",
+          "oklch(61% 0.1683 45.48)",
+          "oklch(72% 0.1683 45.48)",
+          "oklch(84% 0.1683 45.48)",
+          "oklch(95% 0.1683 45.48)"
+        ]
+      },
+      "partition-0": {
+        "role": "secondary",
+        "displayName": "Partition 0",
+        "canonical": "#3478e5",
+        "tonalRamp": [
+          "oklch(15% 0.1794 259.59)",
+          "oklch(26% 0.1794 259.59)",
+          "oklch(38% 0.1794 259.59)",
+          "oklch(49% 0.1794 259.59)",
+          "oklch(61% 0.1794 259.59)",
+          "oklch(72% 0.1794 259.59)",
+          "oklch(84% 0.1794 259.59)",
+          "oklch(95% 0.1794 259.59)"
+        ]
+      },
+      "partition-1": {
+        "role": "secondary",
+        "displayName": "Partition 1",
+        "canonical": "#e88b43",
+        "tonalRamp": [
+          "oklch(15% 0.1421 55.58)",
+          "oklch(26% 0.1421 55.58)",
+          "oklch(38% 0.1421 55.58)",
+          "oklch(49% 0.1421 55.58)",
+          "oklch(61% 0.1421 55.58)",
+          "oklch(72% 0.1421 55.58)",
+          "oklch(84% 0.1421 55.58)",
+          "oklch(95% 0.1421 55.58)"
+        ]
+      },
+      "partition-2": {
+        "role": "secondary",
+        "displayName": "Partition 2",
+        "canonical": "#9b70d4",
+        "tonalRamp": [
+          "oklch(15% 0.1504 302.13)",
+          "oklch(26% 0.1504 302.13)",
+          "oklch(38% 0.1504 302.13)",
+          "oklch(49% 0.1504 302.13)",
+          "oklch(61% 0.1504 302.13)",
+          "oklch(72% 0.1504 302.13)",
+          "oklch(84% 0.1504 302.13)",
+          "oklch(95% 0.1504 302.13)"
+        ]
+      },
+      "partition-3": {
+        "role": "secondary",
+        "displayName": "Partition 3",
+        "canonical": "#df6d95",
+        "tonalRamp": [
+          "oklch(15% 0.1477 359.60)",
+          "oklch(26% 0.1477 359.60)",
+          "oklch(38% 0.1477 359.60)",
+          "oklch(49% 0.1477 359.60)",
+          "oklch(61% 0.1477 359.60)",
+          "oklch(72% 0.1477 359.60)",
+          "oklch(84% 0.1477 359.60)",
+          "oklch(95% 0.1477 359.60)"
+        ]
+      },
+      "partition-4": {
+        "role": "secondary",
+        "displayName": "Partition 4",
+        "canonical": "#5eafd5",
+        "tonalRamp": [
+          "oklch(15% 0.0966 230.46)",
+          "oklch(26% 0.0966 230.46)",
+          "oklch(38% 0.0966 230.46)",
+          "oklch(49% 0.0966 230.46)",
+          "oklch(61% 0.0966 230.46)",
+          "oklch(72% 0.0966 230.46)",
+          "oklch(84% 0.0966 230.46)",
+          "oklch(95% 0.0966 230.46)"
+        ]
+      },
+      "partition-5": {
+        "role": "secondary",
+        "displayName": "Partition 5",
+        "canonical": "#ac743e",
+        "tonalRamp": [
+          "oklch(15% 0.0995 62.96)",
+          "oklch(26% 0.0995 62.96)",
+          "oklch(38% 0.0995 62.96)",
+          "oklch(49% 0.0995 62.96)",
+          "oklch(61% 0.0995 62.96)",
+          "oklch(72% 0.0995 62.96)",
+          "oklch(84% 0.0995 62.96)",
+          "oklch(95% 0.0995 62.96)"
+        ]
+      },
+      "partition-6": {
+        "role": "secondary",
+        "displayName": "Partition 6",
+        "canonical": "#355290",
+        "tonalRamp": [
+          "oklch(15% 0.1076 263.73)",
+          "oklch(26% 0.1076 263.73)",
+          "oklch(38% 0.1076 263.73)",
+          "oklch(49% 0.1076 263.73)",
+          "oklch(61% 0.1076 263.73)",
+          "oklch(72% 0.1076 263.73)",
+          "oklch(84% 0.1076 263.73)",
+          "oklch(95% 0.1076 263.73)"
+        ]
+      },
+      "partition-7": {
+        "role": "secondary",
+        "displayName": "Partition 7",
+        "canonical": "#dd4b4b",
+        "tonalRamp": [
+          "oklch(15% 0.1824 24.21)",
+          "oklch(26% 0.1824 24.21)",
+          "oklch(38% 0.1824 24.21)",
+          "oklch(49% 0.1824 24.21)",
+          "oklch(61% 0.1824 24.21)",
+          "oklch(72% 0.1824 24.21)",
+          "oklch(84% 0.1824 24.21)",
+          "oklch(95% 0.1824 24.21)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "title": {
+        "displayName": "Dialog title",
+        "purpose": "Branch dialog only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Workbench context and explanation."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Native source in CodeMirror."
+      }
+    },
+    "shadows": [
+      {
+        "name": "side-panel",
+        "value": "0 8px 30px #10182818",
+        "purpose": "Overlay navigation and inspector below 1000px."
+      },
+      {
+        "name": "dialog",
+        "value": "0 12px 60px #10182825",
+        "purpose": "Centered branch dialog."
+      }
+    ],
+    "motion": [
+      {
+        "name": "working-spinner",
+        "value": "spin 1s linear infinite",
+        "purpose": "Working phase; disabled by prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "overlay-panels",
+        "value": "999px"
+      },
+      {
+        "name": "mobile",
+        "value": "600px"
+      }
+    ],
+    "focus": {
+      "value": "2px solid #245fca",
+      "offset": "-2px",
+      "purpose": "Keyboard focus-visible controls and focusable canvas."
+    },
+    "previewRampNote": "Tonal ramps are synthesized OKLCH preview metadata; they are not additional shipped CSS tokens.",
+    "sourceFiles": [
+      "web/src/style.css",
+      "web/src/main.jsx",
+      "web/src/CodeDock.jsx",
+      "web/src/Viewport.jsx",
+      "web/src/Experiments.jsx",
+      "web/src/Inspector.jsx",
+      "web/src/useWorkspace.js"
+    ]
+  },
+  "components": [
+    {
+      "name": "Run button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action in the command bar.",
+      "html": "<button class=\"ds-run\">Run</button>",
+      "css": ".ds-run{font-family:Inter,Arial,sans-serif;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:4px;padding:6px 9px;min-height:32px;cursor:pointer;background:var(--accent,#245fca);color:#fff;border-color:var(--accent,#245fca);padding:7px 12px}.ds-run:hover{background:#194eac}.ds-run:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}.ds-run:disabled{opacity:.45;cursor:default}@media(max-width:600px){.ds-run{min-height:44px;min-width:44px}}"
+    },
+    {
+      "name": "View toggle",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Pressed state selects a visualization option.",
+      "html": "<button class=\"ds-toggle\" aria-pressed=\"true\">Wireframe</button>",
+      "css": ".ds-toggle{font-family:Inter,Arial,sans-serif;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:4px;padding:6px 9px;min-height:32px;cursor:pointer;background:transparent;color:#22262b}.ds-toggle:hover{background:#f1f3f6}.ds-toggle[aria-pressed=true]{background:#edf3ff;color:var(--accent,#245fca)}.ds-toggle:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}.ds-toggle:disabled{opacity:.45;cursor:default}@media(max-width:600px){.ds-toggle{min-height:44px;min-width:44px}}"
+    },
+    {
+      "name": "Parameter field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A labeled native parameter.",
+      "html": "<label class=\"ds-field\">Feature weight <input type=\"number\" min=\"0\" max=\"1000\" value=\"40\"></label>",
+      "css": ".ds-field{display:flex;align-items:center;justify-content:space-between;gap:10px;font:13px Inter,Arial,sans-serif;color:#22262b}.ds-field input{font:inherit;background:#fff;color:inherit;border:1px solid #d8dce2;border-radius:4px;padding:6px 8px;min-height:32px;width:76px;font-variant-numeric:tabular-nums}.ds-field input:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}@media(max-width:600px){.ds-field input{min-height:44px}}"
+    },
+    {
+      "name": "Example navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Active example has a blue underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Examples\"><button class=\"ds-active\">PicoRV32</button><button>Jerry</button></nav>",
+      "css": ".ds-nav{display:flex;height:43px;gap:8px}.ds-nav button{font-family:Inter,Arial,sans-serif;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:4px;padding:6px 9px;min-height:32px;cursor:pointer;border-radius:0;border-bottom:2px solid transparent;padding:0 12px;background:transparent;color:var(--muted,#626872)}.ds-nav button.ds-active{color:#22262b;border-bottom-color:var(--accent,#245fca)}.ds-nav button:hover{background:#f1f3f6}.ds-nav button:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}@media(max-width:600px){.ds-nav{height:46px;gap:0}.ds-nav button{min-height:44px;min-width:44px;padding:0 6px;font-size:12px}}"
+    },
+    {
+      "name": "Reference tag",
+      "kind": "chip",
+      "refersTo": "view-tag",
+      "description": "Noninteractive label identifies the A side.",
+      "html": "<span class=\"ds-view-tag\">A</span>",
+      "css": ".ds-view-tag{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid #dce0e6;border-radius:4px;color:#525b69;font:12px Inter,Arial,sans-serif}@media(max-width:600px){.ds-view-tag{width:22px;height:22px}}"
+    },
+    {
+      "name": "Experiment row",
+      "kind": "custom",
+      "refersTo": "history-row",
+      "description": "Selected experiment with source identity and measured timing.",
+      "html": "<div class=\"ds-row\"><button class=\"ds-select\"><span><strong>main</strong><small>7d83ab1 \u00b7 320 ms</small></span></button><button class=\"ds-pin\" aria-label=\"Use experiment as reference A\">A</button></div>",
+      "css": ".ds-row{display:flex;align-items:center;background:#edf3ff;border-radius:4px;font-family:Inter,Arial,sans-serif}.ds-select{font-family:Inter,Arial,sans-serif;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:4px;padding:6px 9px;min-height:32px;cursor:pointer;flex:1;justify-content:flex-start;text-align:left;background:transparent;padding:9px 7px}.ds-select strong{display:block;font-size:13px;font-weight:500;color:#22262b}.ds-select small{display:block;margin-top:5px;font-size:12px;color:var(--muted,#626872);font-variant-numeric:tabular-nums}.ds-pin{border:1px solid #bdcee9;border-radius:4px;background:#fff;color:var(--accent,#245fca);width:26px;height:28px;padding:0;margin-right:5px;font:12px Inter,Arial,sans-serif}.ds-select:hover,.ds-pin:hover{background:#f1f3f6}.ds-select:focus-visible,.ds-pin:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}@media(max-width:600px){.ds-select,.ds-pin{min-height:44px;min-width:44px}}"
+    },
+    {
+      "name": "Source toolbar",
+      "kind": "custom",
+      "refersTo": "source-toolbar",
+      "description": "The working file is separate from historical experiment selection.",
+      "html": "<div class=\"ds-source\"><code>criterion.cpp</code><span>Working file</span><button>Save &amp; run</button></div>",
+      "css": ".ds-source{display:flex;align-items:center;gap:9px;padding:0 12px;height:40px;background:#fafbfc;border-bottom:1px solid #f0f1f3;font:12px Inter,Arial,sans-serif}.ds-source code{flex:1;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.ds-source span{color:var(--muted,#626872)}.ds-source button{font-family:Inter,Arial,sans-serif;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:4px;padding:6px 9px;min-height:32px;cursor:pointer;font-size:12px;background:transparent;color:var(--accent,#245fca)}.ds-source button:hover{background:#f1f3f6}.ds-source button:focus-visible{outline:2px solid var(--accent,#245fca);outline-offset:-2px;}@media(max-width:600px){.ds-source{height:46px;padding:0 7px;gap:3px}.ds-source span{display:none}.ds-source button{min-height:44px;min-width:100px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The specimen bench",
+    "overview": "The specimen bench is a light native workbench: the actual output occupies the center, experiment history sits on the left, and the selected result is explained on the right. Code, timings and compiler diagnostics share a lower dock. This direction was implemented under the user's delegated brief; it is not recorded as an approved visual comp.\n\nWhite surfaces, compact sans-serif labels and straight panel seams keep attention on the data. Color marks actions, selection and measured output. Native meshes and netlists are the imagery; promotional illustration and ornamental cards have no role here.",
+    "keyCharacteristics": [
+      "A/B output remains central and registered.",
+      "History, inspector and code occupy stable work areas.",
+      "White surfaces and blue interaction states; no green or lime.",
+      "Rendering responds to data, resize and interaction rather than a continuous animation loop."
+    ],
+    "rules": [
+      {
+        "name": "The Registered Comparison Rule",
+        "body": "A and B share geometry framing, lighting and camera or pan/zoom transform. Mesh error uses the same range from zero to one percent of the input bounding-box diagonal.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat Work Surface Rule",
+        "body": "Do not add shadows around the canvas, metrics table, editor or history rows. Reserve depth for overlays.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the same camera or transform across A/B views and the fixed mesh error scale.",
+      "Do use real native results, source paths, hashes and measured values.",
+      "Do keep controls at least 44px high and 44px wide at the mobile breakpoint; inputs and selects are at least 44px high.",
+      "Do preserve keyboard access, explicit control names and textual errors.",
+      "Do keep the last valid result visible when a build fails."
+    ],
+    "donts": [
+      "Don't introduce green or lime, serif headlines, beige page washes, glossy illustrations or ornamental cards.",
+      "Don't use display headlines, eyebrows or promotional copy inside the workbench.",
+      "Don't use color alone to communicate the current experiment or a failure.",
+      "Don't add a continuous render loop for an otherwise idle view.",
+      "Don't present historical source as the working file or assume saving keeps the historical run selected."
+    ]
+  }
+}

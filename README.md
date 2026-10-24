@@ -27,6 +27,17 @@ Open **http://127.0.0.1:7331** and click **Prepare & run**. Setup downloads pinn
 
 The bundled inputs total about 1 MiB compressed. Normal setup does not run Yosys. Build and experiment jobs run serially; the default worker and compiler virtual-memory limits are 768 MiB and 1536 MiB. The browser has its own memory use. See [resource limits](docs/architecture.md#resource-limits).
 
+## Workspace
+
+The comparison occupies the central canvas. Experiments are on the left, metrics and parameters on the right. The bottom dock contains CodeMirror, timing details and compiler output. Collapse either side panel when you need more canvas space.
+
+- **Ctrl/Cmd+Enter** runs the current algorithm. **Ctrl/Cmd+S** saves the source editor.
+- Mesh views share orbit and zoom controls; netlist views share pan and zoom.
+- Arrow keys, plus/minus and zero navigate or reset the focused canvas.
+- Tabs and branch dialogs support keyboard navigation.
+
+The interface follows [VS Code view/panel guidance](https://code.visualstudio.com/api/ux-guidelines/views), [Linear’s navigation hierarchy](https://linear.app/now/behind-the-latest-design-refresh), and [WAI-ARIA tab patterns](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/). The component and interaction contract is in [DESIGN.md](DESIGN.md).
+
 ## Two native examples
 
 ### Partition a RISC-V processor

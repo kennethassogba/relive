@@ -13,3 +13,7 @@ assets/picorv32.json
 assets/ogre.obj
 assets/ogre.zip
 .playwright-cli/
+
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/config.local.json

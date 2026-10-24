@@ -12,7 +12,7 @@ The watcher compiles the file. The result updates without loading or preparing t
 
 Select the earlier successful run. Click **Branch from here**, name it `another-idea`, and change the code again. The branch inherits the prepared input and parameters. Click **Replay** on the original experiment to reproduce its result without overwriting the working file.
 
-If you want to show crash recovery, temporarily introduce a syntax error in the source and save. The build error appears while the previous visualization stays on screen. Fix the error to continue.
+If you want to show build-error recovery, temporarily introduce a syntax error in the source and save. The build error appears while the previous visualization stays on screen. Fix the error to continue.
 
 ## 1:00 · The same loop in 3D
 
@@ -22,7 +22,7 @@ Drag either view: both cameras move together. Toggle **Wireframe**, then **Error
 
 ## 1:35 · Switch to Rust
 
-Choose **Rust** in Run parameters. Open `examples/mesh/criterion.rs`, change `FEATURE_BIAS`, and save. The model stays prepared; rustc produces the new native library.
+Choose **Rust** in the bottom dock. Open `examples/mesh/criterion.rs`, change `FEATURE_BIAS`, and save. The model stays prepared; rustc produces the new native library.
 
 Finish with **Export experiment**, then show the measured medians in [benchmark.md](benchmark.md). The numbers are machine-specific; the raw samples are included. Avoid presenting one fastest run as a universal latency promise.
 

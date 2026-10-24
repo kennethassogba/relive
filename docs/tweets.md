@@ -14,7 +14,7 @@ Attach: `images/mesh-comparison.png`.
 
 ## Mesh · English
 
-I can now make an ogre uglier in 821 ms.
+I can now make an ogre uglier in 1.26 seconds.
 
 That's the measured median from saving Rust code to the new mesh appearing on my laptop. The error map documents my crimes.
 
@@ -44,7 +44,7 @@ Joindre : `images/mesh-comparison.png`.
 
 ## Maillage · Français
 
-Je peux maintenant abîmer un ogre en 821 ms.
+Je peux maintenant abîmer un ogre en 1,26 seconde.
 
 Médiane mesurée entre la sauvegarde du code Rust et l'affichage du nouveau maillage sur mon laptop. La carte d'erreur conserve les preuves.
 
@@ -61,3 +61,15 @@ Relive exécute chaque version dans un worker séparé. Je corrige, je sauvegard
 https://github.com/kennethassogba/relive
 
 Joindre : `images/netlist-comparison.png`.
+
+## Rebuild · English
+
+I built an algorithm tool. Then I looked at the UI and realized I had built a quarterly earnings dashboard.
+
+Deleted the dashboard. Kept the C++.
+
+Relive now has a proper code dock, experiment history and synced 3D comparisons.
+
+https://github.com/kennethassogba/relive
+
+Attach: `images/mesh-code.png`.

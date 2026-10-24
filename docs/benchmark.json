@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-24T13:20:47.074Z",
+  "date": "2026-10-24T13:46:41.012Z",
   "machine": {
     "platform": "linux",
     "arch": "x64",
@@ -16,16 +16,16 @@
       "project": "netlist",
       "mode": "relive",
       "sample": 0,
-      "id": "20261024-152048-69dc5876",
-      "source_sha256": "71a90b82c023c7dd871e6bdcb551501e8cb64bfba81d9ecf25eefd963d644389",
-      "compile_ms": 1560.609962005401,
-      "prepare_ms": 0.004272995283827186,
-      "worker_ms": 124.74012401071377,
-      "ready_ms": 1864.988594,
-      "paint_ms": 2489.165654,
-      "algorithm_ms": 9.786239999812096,
-      "worker_peak_rss_mb": 71.01171875,
-      "host_peak_rss_mb": 89.375,
+      "id": "20261024-154641-d2a66cf0",
+      "source_sha256": "a00ee8d5916f006eca464721322c3ea0110004bcabfc72f3984f0d7703df7287",
+      "compile_ms": 960.9257999982219,
+      "prepare_ms": 0.0022379972506314516,
+      "worker_ms": 119.2479899909813,
+      "ready_ms": 1247.968972,
+      "paint_ms": 2369.361173,
+      "algorithm_ms": 17.24869801546447,
+      "worker_peak_rss_mb": 13.31640625,
+      "host_peak_rss_mb": 63.7265625,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -48,23 +48,179 @@
           2130,
           1895
         ],
-        "algorithm_ms": 9.786239999812096
+        "algorithm_ms": 17.24869801546447
       }
     },
     {
       "project": "netlist",
       "mode": "classic",
       "sample": 0,
-      "id": "20261024-152050-23b6787b",
-      "source_sha256": "96ea8b5f75f75b9aed2e71671a9fe5bcfc9fae8570c35665db7beb5b788b6be6",
-      "compile_ms": 1607.0280560234096,
-      "prepare_ms": 1530.3163050266448,
-      "worker_ms": 110.37807000684552,
-      "ready_ms": 3455.014706,
-      "paint_ms": 3601.181798,
-      "algorithm_ms": 12.481225974624977,
+      "id": "20261024-154644-392bc47f",
+      "source_sha256": "e44a31306ea3b738de27c0fc3547810871522f927911e49fd19bd88a1c59bbc4",
+      "compile_ms": 675.9085659869015,
+      "prepare_ms": 962.4388430092949,
+      "worker_ms": 78.84242900763638,
+      "ready_ms": 1876.421201,
+      "paint_ms": 1987.264011,
+      "algorithm_ms": 5.336680012987927,
+      "worker_peak_rss_mb": 71.234375,
+      "host_peak_rss_mb": 88.6171875,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 5.336680012987927
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 1,
+      "id": "20261024-154646-1684123f",
+      "source_sha256": "778e3b20ed276be546555c7e411fa753c9f799b83934fc9a2794c3899f2064e1",
+      "compile_ms": 726.971659983974,
+      "prepare_ms": 668.7239730090369,
+      "worker_ms": 71.743301989045,
+      "ready_ms": 1627.435308,
+      "paint_ms": 1717.72372,
+      "algorithm_ms": 8.133116993121803,
+      "worker_peak_rss_mb": 71.00390625,
+      "host_peak_rss_mb": 89.46484375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 8.133116993121803
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 1,
+      "id": "20261024-154647-8a6e66bc",
+      "source_sha256": "35924993ad799dad94aa8b1e59419a7297acb7fa615909500d7db605f41fd70f",
+      "compile_ms": 793.0798729939852,
+      "prepare_ms": 0.0027240021154284477,
+      "worker_ms": 96.72912600217387,
+      "ready_ms": 1066.906395,
+      "paint_ms": 1171.223199,
+      "algorithm_ms": 9.028087981278077,
+      "worker_peak_rss_mb": 13.5078125,
+      "host_peak_rss_mb": 63.7265625,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 9.028087981278077
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 2,
+      "id": "20261024-154649-3a43bf81",
+      "source_sha256": "7d5e1ee8900a502888277576e4e10582e2064039cab833c45156209d36e3f685",
+      "compile_ms": 903.0895479954779,
+      "prepare_ms": 0.012908014468848705,
+      "worker_ms": 117.74808098562062,
+      "ready_ms": 1174.824866,
+      "paint_ms": 1343.064093,
+      "algorithm_ms": 12.749253015499562,
+      "worker_peak_rss_mb": 13.77734375,
+      "host_peak_rss_mb": 63.7265625,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 12.749253015499562
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 2,
+      "id": "20261024-154650-cb28766b",
+      "source_sha256": "6d932e789201dc7578ee7f821b7a879dd79d5f7b61c96a9fb1c0482e8d89f98e",
+      "compile_ms": 900.7746279821731,
+      "prepare_ms": 903.5501500184182,
+      "worker_ms": 101.38482099864632,
+      "ready_ms": 2101.501498,
+      "paint_ms": 2239.321232,
+      "algorithm_ms": 7.52712698886171,
       "worker_peak_rss_mb": 71.171875,
-      "host_peak_rss_mb": 89.00390625,
+      "host_peak_rss_mb": 89.65625,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -87,179 +243,23 @@
           2130,
           1895
         ],
-        "algorithm_ms": 12.481225974624977
-      }
-    },
-    {
-      "project": "netlist",
-      "mode": "classic",
-      "sample": 1,
-      "id": "20261024-152054-183b804c",
-      "source_sha256": "4cec1ad3a6b067d23d5d60f5ff3b7a68a627698ff6929356d3175a187d06ba17",
-      "compile_ms": 1611.6863840143196,
-      "prepare_ms": 1299.759499001084,
-      "worker_ms": 107.65877499943599,
-      "ready_ms": 3217.606101,
-      "paint_ms": 3331.188127,
-      "algorithm_ms": 9.921846009092405,
-      "worker_peak_rss_mb": 71.0546875,
-      "host_peak_rss_mb": 89.9140625,
-      "prepared_id": "1665b1b43c486dae40d726cc",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "cut_nets": 2679,
-        "connectivity": 3276,
-        "balance": 0.05037,
-        "sizes": [
-          2226,
-          2226,
-          2135,
-          1890
-        ],
-        "algorithm_ms": 9.921846009092405
-      }
-    },
-    {
-      "project": "netlist",
-      "mode": "relive",
-      "sample": 1,
-      "id": "20261024-152057-2c226ed3",
-      "source_sha256": "4d6c8f2652e88e1b18e621690bc91fb78b00c287e5d15f079e3a0fca4192aeba",
-      "compile_ms": 1529.5026350067928,
-      "prepare_ms": 0.0062280159909278154,
-      "worker_ms": 104.1747760027647,
-      "ready_ms": 1817.218322,
-      "paint_ms": 1917.643972,
-      "algorithm_ms": 14.583593001589179,
-      "worker_peak_rss_mb": 71.12890625,
-      "host_peak_rss_mb": 89.375,
-      "prepared_id": "1665b1b43c486dae40d726cc",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "cut_nets": 2679,
-        "connectivity": 3276,
-        "balance": 0.05037,
-        "sizes": [
-          2226,
-          2226,
-          2135,
-          1890
-        ],
-        "algorithm_ms": 14.583593001589179
-      }
-    },
-    {
-      "project": "netlist",
-      "mode": "relive",
-      "sample": 2,
-      "id": "20261024-152059-e362b07f",
-      "source_sha256": "53a9acc19de95f53eed4c7c3c7767645a0078ab00ae560c03130f3f7ea8f47f6",
-      "compile_ms": 1660.455183009617,
-      "prepare_ms": 0.010980002116411924,
-      "worker_ms": 125.30532199889421,
-      "ready_ms": 1976.466734,
-      "paint_ms": 2069.947329,
-      "algorithm_ms": 13.003864994971082,
-      "worker_peak_rss_mb": 71.12109375,
-      "host_peak_rss_mb": 89.375,
-      "prepared_id": "1665b1b43c486dae40d726cc",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "cut_nets": 2872,
-        "connectivity": 3330,
-        "balance": 0.05037,
-        "sizes": [
-          2226,
-          2226,
-          2130,
-          1895
-        ],
-        "algorithm_ms": 13.003864994971082
-      }
-    },
-    {
-      "project": "netlist",
-      "mode": "classic",
-      "sample": 2,
-      "id": "20261024-152101-c4003837",
-      "source_sha256": "eeef44892cb014334ff035b4ba86d8db175931da915be7663d398fad72aeac1f",
-      "compile_ms": 1670.7780199940316,
-      "prepare_ms": 1327.999531000387,
-      "worker_ms": 167.0328219770454,
-      "ready_ms": 3368.295142,
-      "paint_ms": 3458.4831,
-      "algorithm_ms": 10.351039993111044,
-      "worker_peak_rss_mb": 71.15234375,
-      "host_peak_rss_mb": 89.98046875,
-      "prepared_id": "1665b1b43c486dae40d726cc",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "cut_nets": 2872,
-        "connectivity": 3330,
-        "balance": 0.05037,
-        "sizes": [
-          2226,
-          2226,
-          2130,
-          1895
-        ],
-        "algorithm_ms": 10.351039993111044
+        "algorithm_ms": 7.52712698886171
       }
     },
     {
       "project": "netlist",
       "mode": "classic",
       "sample": 3,
-      "id": "20261024-152105-243a0852",
-      "source_sha256": "bee5c095223b8f666beeb5ee819e64814e2b0b535d16cbe4a97a7925606338b3",
-      "compile_ms": 1702.1731440036092,
-      "prepare_ms": 1298.6593609966803,
-      "worker_ms": 54.15351499686949,
-      "ready_ms": 3237.242661,
-      "paint_ms": 3293.308571,
-      "algorithm_ms": 5.972154991468415,
-      "worker_peak_rss_mb": 71.15234375,
-      "host_peak_rss_mb": 89.6328125,
+      "id": "20261024-154652-1e25dbda",
+      "source_sha256": "682764120714c7a4048439de34c203f17b2c2e81cd67d08fbd021d1c062c4d1a",
+      "compile_ms": 1003.5086830030195,
+      "prepare_ms": 1036.0964550054632,
+      "worker_ms": 114.63546601589769,
+      "ready_ms": 2376.64629,
+      "paint_ms": 2522.806445,
+      "algorithm_ms": 13.147005985956639,
+      "worker_peak_rss_mb": 71.265625,
+      "host_peak_rss_mb": 89.29296875,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -282,23 +282,23 @@
           2135,
           1890
         ],
-        "algorithm_ms": 5.972154991468415
+        "algorithm_ms": 13.147005985956639
       }
     },
     {
       "project": "netlist",
       "mode": "relive",
       "sample": 3,
-      "id": "20261024-152108-6ffb4167",
-      "source_sha256": "3849684692eb477f6353c5b55046c4cedb0f5ba430b92226fe6e6d053256ccaf",
-      "compile_ms": 1057.7247040055227,
-      "prepare_ms": 0.00221698428504169,
-      "worker_ms": 67.23064801190048,
-      "ready_ms": 1271.112682,
-      "paint_ms": 1317.071698,
-      "algorithm_ms": 9.378010989166796,
-      "worker_peak_rss_mb": 71.12109375,
-      "host_peak_rss_mb": 89.375,
+      "id": "20261024-154655-427c2d48",
+      "source_sha256": "454b89bff35d8ccdb620e1aedcc90085d86c9b07315518ac1a67b868997d53ed",
+      "compile_ms": 1099.3645440030377,
+      "prepare_ms": 0.002809974830597639,
+      "worker_ms": 178.0357709794771,
+      "ready_ms": 1463.438145,
+      "paint_ms": 1595.474585,
+      "algorithm_ms": 17.473387997597456,
+      "worker_peak_rss_mb": 13.64453125,
+      "host_peak_rss_mb": 63.7265625,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -321,23 +321,23 @@
           2135,
           1890
         ],
-        "algorithm_ms": 9.378010989166796
+        "algorithm_ms": 17.473387997597456
       }
     },
     {
       "project": "netlist",
       "mode": "relive",
       "sample": 4,
-      "id": "20261024-152110-300b3265",
-      "source_sha256": "f89a9f149674882d36aafb136d0b162b4ab39f4114eb5a1cf3e0013367cad3f6",
-      "compile_ms": 970.0594149762765,
-      "prepare_ms": 0.0013630196917802095,
-      "worker_ms": 100.41257098782808,
-      "ready_ms": 1243.020887,
-      "paint_ms": 1338.729612,
-      "algorithm_ms": 6.532002007588744,
-      "worker_peak_rss_mb": 71.12109375,
-      "host_peak_rss_mb": 89.375,
+      "id": "20261024-154657-2e2f7b33",
+      "source_sha256": "1a7282a67e0b9a5c076069f0201029b853cccc265ae177cb9c2bde84d20fde15",
+      "compile_ms": 1359.140144981211,
+      "prepare_ms": 0.0025109911803156137,
+      "worker_ms": 294.7134889836889,
+      "ready_ms": 1852.86293,
+      "paint_ms": 2040.764364,
+      "algorithm_ms": 19.446216989308596,
+      "worker_peak_rss_mb": 13.32421875,
+      "host_peak_rss_mb": 63.7265625,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -360,23 +360,23 @@
           2130,
           1895
         ],
-        "algorithm_ms": 6.532002007588744
+        "algorithm_ms": 19.446216989308596
       }
     },
     {
       "project": "netlist",
       "mode": "classic",
       "sample": 4,
-      "id": "20261024-152111-24fef9a3",
-      "source_sha256": "6a8d478bc814bc986ec340d1cce29d05ce1f43dc49b4d0fb69035e60e9d71520",
-      "compile_ms": 1013.8638839998748,
-      "prepare_ms": 657.4480900017079,
-      "worker_ms": 51.22389699681662,
-      "ready_ms": 1890.156726,
-      "paint_ms": 1934.813669,
-      "algorithm_ms": 6.0223659966140985,
-      "worker_peak_rss_mb": 71.14453125,
-      "host_peak_rss_mb": 89.87109375,
+      "id": "20261024-154659-746e2e93",
+      "source_sha256": "62a492c14e10352b552c97327fff3b489f5e88555d6ba04c562a727a3f993d00",
+      "compile_ms": 1833.071431989083,
+      "prepare_ms": 1854.583806998562,
+      "worker_ms": 123.70873801410198,
+      "ready_ms": 4100.004842,
+      "paint_ms": 4252.024778,
+      "algorithm_ms": 8.522449992597103,
+      "worker_peak_rss_mb": 71.12109375,
+      "host_peak_rss_mb": 87.8359375,
       "prepared_id": "1665b1b43c486dae40d726cc",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -399,23 +399,23 @@
           2130,
           1895
         ],
-        "algorithm_ms": 6.0223659966140985
+        "algorithm_ms": 8.522449992597103
       }
     },
     {
       "project": "mesh-cpp",
       "mode": "relive",
       "sample": 0,
-      "id": "20261024-152117-732a9005",
-      "source_sha256": "5f0c9a94e8061ed71ae1f0c19a224d751f93b77285107b4dc3b26a2dcb7e6518",
-      "compile_ms": 317.085513001075,
-      "prepare_ms": 0.0034539843909442425,
-      "worker_ms": 271.31051002652384,
-      "ready_ms": 736.12838,
-      "paint_ms": 838.27496,
-      "algorithm_ms": 171.650364,
-      "worker_peak_rss_mb": 60.65234375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154718-dd39fbb6",
+      "source_sha256": "377626107c2fdb321b9242921776897079473e35105d7d4a0aeddcaa148b82cb",
+      "compile_ms": 604.7955899848603,
+      "prepare_ms": 0.005879992386326194,
+      "worker_ms": 509.94227098999545,
+      "ready_ms": 1397.386215,
+      "paint_ms": 1539.165073,
+      "algorithm_ms": 314.371961,
+      "worker_peak_rss_mb": 23.9296875,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -432,8 +432,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 171.650364,
-        "evaluation_ms": 54.24223,
+        "algorithm_ms": 314.371961,
+        "evaluation_ms": 82.77208,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -442,16 +442,16 @@
       "project": "mesh-cpp",
       "mode": "classic",
       "sample": 0,
-      "id": "20261024-152118-0b8b41ff",
-      "source_sha256": "211585d8a5765679653e03d1800bbe32113e7e29609aadfeb0de34b5e56f7484",
-      "compile_ms": 410.3575740009546,
-      "prepare_ms": 638.485412026057,
-      "worker_ms": 286.1171080148779,
-      "ready_ms": 1530.216482,
-      "paint_ms": 1601.660881,
-      "algorithm_ms": 186.876888,
-      "worker_peak_rss_mb": 61.87890625,
-      "host_peak_rss_mb": 78.98828125,
+      "id": "20261024-154720-767b92a7",
+      "source_sha256": "90f827a7845a06b38a8492da4a00b6fb148b5f183a574ec37ec63878709dc5e0",
+      "compile_ms": 332.609698001761,
+      "prepare_ms": 1261.6492529923562,
+      "worker_ms": 572.1934390021488,
+      "ready_ms": 2415.309591,
+      "paint_ms": 2587.706682,
+      "algorithm_ms": 347.519405,
+      "worker_peak_rss_mb": 60.96484375,
+      "host_peak_rss_mb": 79.421875,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -468,8 +468,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 186.876888,
-        "evaluation_ms": 59.557302,
+        "algorithm_ms": 347.519405,
+        "evaluation_ms": 107.886001,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -478,16 +478,16 @@
       "project": "mesh-cpp",
       "mode": "classic",
       "sample": 1,
-      "id": "20261024-152119-5032f483",
-      "source_sha256": "ca0e1cfc3898f5be382f8ccc5cf96bff256e5e905f056a01610f910143f02b4a",
-      "compile_ms": 334.5494150125887,
-      "prepare_ms": 580.6027459912002,
-      "worker_ms": 297.21628897823393,
-      "ready_ms": 1384.061556,
-      "paint_ms": 1435.068472,
-      "algorithm_ms": 202.459563,
-      "worker_peak_rss_mb": 61.0078125,
-      "host_peak_rss_mb": 79.09375,
+      "id": "20261024-154722-ac0ec115",
+      "source_sha256": "70fde4f700d11365f1cc81a25472ecdf63e32ae075164b4375fed28bf2dfe4b6",
+      "compile_ms": 485.3530189720914,
+      "prepare_ms": 1254.0810710052028,
+      "worker_ms": 532.578138023382,
+      "ready_ms": 2577.098316,
+      "paint_ms": 2701.31782,
+      "algorithm_ms": 330.731137,
+      "worker_peak_rss_mb": 61.14453125,
+      "host_peak_rss_mb": 79.22265625,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -504,8 +504,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 202.459563,
-        "evaluation_ms": 56.307643,
+        "algorithm_ms": 330.731137,
+        "evaluation_ms": 111.018816,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -514,16 +514,16 @@
       "project": "mesh-cpp",
       "mode": "relive",
       "sample": 1,
-      "id": "20261024-152121-a722a62f",
-      "source_sha256": "82f1fa57f00f159307863a7ea8d48ee308b67820a5c5e43a0a891872ff82156d",
-      "compile_ms": 227.3508209909778,
-      "prepare_ms": 0.014000979717820883,
-      "worker_ms": 240.06909198942594,
-      "ready_ms": 655.220574,
-      "paint_ms": 724.403852,
-      "algorithm_ms": 161.849363,
-      "worker_peak_rss_mb": 60.77734375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154725-e85f10e1",
+      "source_sha256": "fc9a8c1dbc03f39b36e5650684530f7bad3bff6fb86e74ad0b035fdfd8c7bf75",
+      "compile_ms": 543.4156070114113,
+      "prepare_ms": 0.0031999952625483274,
+      "worker_ms": 521.7619680042844,
+      "ready_ms": 1305.860337,
+      "paint_ms": 1455.874469,
+      "algorithm_ms": 316.302494,
+      "worker_peak_rss_mb": 24.1875,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -540,8 +540,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 161.849363,
-        "evaluation_ms": 48.160148,
+        "algorithm_ms": 316.302494,
+        "evaluation_ms": 113.955388,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -550,16 +550,16 @@
       "project": "mesh-cpp",
       "mode": "relive",
       "sample": 2,
-      "id": "20261024-152121-d7914202",
-      "source_sha256": "d5cab3885472bba636117326ecca120f8b742ee6dd962c1a822c0ee5ba896652",
-      "compile_ms": 371.5057650115341,
-      "prepare_ms": 0.003843975719064474,
-      "worker_ms": 357.7217500132974,
-      "ready_ms": 931.043453,
-      "paint_ms": 1009.727296,
-      "algorithm_ms": 245.134007,
-      "worker_peak_rss_mb": 60.65234375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154727-3bc384f5",
+      "source_sha256": "f8f45cad0d30cf98f89ae6bc1609fbabe8630e508a2893d5d09c6d578d075205",
+      "compile_ms": 577.7945249865297,
+      "prepare_ms": 0.0036249984987080097,
+      "worker_ms": 534.2717570019886,
+      "ready_ms": 1290.029763,
+      "paint_ms": 1446.298363,
+      "algorithm_ms": 352.338709,
+      "worker_peak_rss_mb": 24.06640625,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
@@ -576,8 +576,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 245.134007,
-        "evaluation_ms": 63.144431,
+        "algorithm_ms": 352.338709,
+        "evaluation_ms": 94.639624,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -586,15 +586,159 @@
       "project": "mesh-cpp",
       "mode": "classic",
       "sample": 2,
-      "id": "20261024-152123-d0aaa92f",
-      "source_sha256": "1f32a6d4dbc90b2fba95a1ea7bfe5540022620980025a2efe68dacce508f0619",
-      "compile_ms": 375.3038110153284,
-      "prepare_ms": 679.0053860167973,
-      "worker_ms": 294.49071298586205,
-      "ready_ms": 1521.91836,
-      "paint_ms": 1579.570896,
-      "algorithm_ms": 202.942408,
-      "worker_peak_rss_mb": 60.94140625,
+      "id": "20261024-154728-c4865ed6",
+      "source_sha256": "4c468b7054b4313498cd1bb253ddf3c5fb4328cbcac3e66a27fc3f7be9021c2e",
+      "compile_ms": 502.2706029994879,
+      "prepare_ms": 1245.4591119894758,
+      "worker_ms": 774.3246199970599,
+      "ready_ms": 2778.840349,
+      "paint_ms": 2935.790284,
+      "algorithm_ms": 570.539353,
+      "worker_peak_rss_mb": 62.01953125,
+      "host_peak_rss_mb": 79.328125,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 570.539353,
+        "evaluation_ms": 111.003077,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 3,
+      "id": "20261024-154731-70452feb",
+      "source_sha256": "5d2a0b0b8fcfb0ab1a23fda89f7b75a847c9ca63543b582bbc103e3b82e2e9b0",
+      "compile_ms": 647.3507209739182,
+      "prepare_ms": 1365.5182009970304,
+      "worker_ms": 576.0940780164674,
+      "ready_ms": 2897.302379,
+      "paint_ms": 2983.925115,
+      "algorithm_ms": 360.710269,
+      "worker_peak_rss_mb": 61.0859375,
+      "host_peak_rss_mb": 79.046875,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 360.710269,
+        "evaluation_ms": 115.651067,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 3,
+      "id": "20261024-154734-1f0d43f8",
+      "source_sha256": "348c97fd17261ec1f6798c5aa54ffe40776b09d9e1cf2a879710daab5839c823",
+      "compile_ms": 547.3025639948901,
+      "prepare_ms": 0.004503002855926752,
+      "worker_ms": 541.7648740112782,
+      "ready_ms": 1324.723492,
+      "paint_ms": 1474.584688,
+      "algorithm_ms": 334.490792,
+      "worker_peak_rss_mb": 24.29296875,
+      "host_peak_rss_mb": 69.68359375,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 334.490792,
+        "evaluation_ms": 106.745957,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 4,
+      "id": "20261024-154736-dcb24e97",
+      "source_sha256": "4c7ba39419aba7c2c25a73ccaa791936a7e0799db3b67972e0e7fb17acfedf09",
+      "compile_ms": 617.7881309995428,
+      "prepare_ms": 0.0033789838198572397,
+      "worker_ms": 533.8886619720142,
+      "ready_ms": 1391.070009,
+      "paint_ms": 1544.869024,
+      "algorithm_ms": 348.195486,
+      "worker_peak_rss_mb": 23.953125,
+      "host_peak_rss_mb": 69.68359375,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 348.195486,
+        "evaluation_ms": 93.4042,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 4,
+      "id": "20261024-154737-6fce99b0",
+      "source_sha256": "9b7c06d25b49c3dd64ff76fa91bb3fee331028015172d201cc82996227050ce1",
+      "compile_ms": 643.234012008179,
+      "prepare_ms": 1390.4471349960659,
+      "worker_ms": 536.0516350192484,
+      "ready_ms": 2844.632039,
+      "paint_ms": 3037.318727,
+      "algorithm_ms": 343.321118,
+      "worker_peak_rss_mb": 62.16796875,
       "host_peak_rss_mb": 79.1171875,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
@@ -612,152 +756,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 202.942408,
-        "evaluation_ms": 50.15273,
-        "rms_error": 0.0021278972652280254,
-        "max_error": 0.015575047942369462
-      }
-    },
-    {
-      "project": "mesh-cpp",
-      "mode": "classic",
-      "sample": 3,
-      "id": "20261024-152124-420b78d7",
-      "source_sha256": "f7e420f4e9c6f60b149b99b6e01e8e3db0ae5b4eddc1048362e6e411d3fc8449",
-      "compile_ms": 302.9010360187385,
-      "prepare_ms": 678.790720005054,
-      "worker_ms": 350.7955470122397,
-      "ready_ms": 1538.635912,
-      "paint_ms": 1608.165868,
-      "algorithm_ms": 231.610636,
-      "worker_peak_rss_mb": 60.9921875,
-      "host_peak_rss_mb": 79.203125,
-      "prepared_id": "90a12a4a914757d65c65b859",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "triangles": 7970,
-        "vertices": 4042,
-        "target_reached": true,
-        "algorithm_ms": 231.610636,
-        "evaluation_ms": 64.063479,
-        "rms_error": 0.0017146746986185244,
-        "max_error": 0.013000202848638837
-      }
-    },
-    {
-      "project": "mesh-cpp",
-      "mode": "relive",
-      "sample": 3,
-      "id": "20261024-152126-52d99bdc",
-      "source_sha256": "8753e01146b75b1e33cb1ab88db8d1ae3bea80a9a12347a730da13e163135d93",
-      "compile_ms": 422.9858949838672,
-      "prepare_ms": 0.003762019332498312,
-      "worker_ms": 410.8887790061999,
-      "ready_ms": 1034.019104,
-      "paint_ms": 1138.572224,
-      "algorithm_ms": 241.832174,
-      "worker_peak_rss_mb": 60.77734375,
-      "host_peak_rss_mb": 79.03515625,
-      "prepared_id": "90a12a4a914757d65c65b859",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "triangles": 7970,
-        "vertices": 4042,
-        "target_reached": true,
-        "algorithm_ms": 241.832174,
-        "evaluation_ms": 77.549862,
-        "rms_error": 0.0017146746986185244,
-        "max_error": 0.013000202848638837
-      }
-    },
-    {
-      "project": "mesh-cpp",
-      "mode": "relive",
-      "sample": 4,
-      "id": "20261024-152127-b6a6e207",
-      "source_sha256": "f79f36f7aa31c6be92dd67ff8490b81da7b77b5db845afde1d696c778ced2d02",
-      "compile_ms": 443.35965599748306,
-      "prepare_ms": 0.002254004357382655,
-      "worker_ms": 380.3300159925129,
-      "ready_ms": 998.278905,
-      "paint_ms": 1069.87206,
-      "algorithm_ms": 246.577769,
-      "worker_peak_rss_mb": 60.65234375,
-      "host_peak_rss_mb": 79.03515625,
-      "prepared_id": "90a12a4a914757d65c65b859",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "triangles": 7970,
-        "vertices": 4042,
-        "target_reached": true,
-        "algorithm_ms": 246.577769,
-        "evaluation_ms": 69.302146,
-        "rms_error": 0.0021278972652280254,
-        "max_error": 0.015575047942369462
-      }
-    },
-    {
-      "project": "mesh-cpp",
-      "mode": "classic",
-      "sample": 4,
-      "id": "20261024-152128-c8854446",
-      "source_sha256": "6ce86848d1e57824d369061091ac6a2db654b595b6dfbc0f03b2a99da6105f56",
-      "compile_ms": 470.1855329913087,
-      "prepare_ms": 801.075622002827,
-      "worker_ms": 363.80553399794735,
-      "ready_ms": 1821.341486,
-      "paint_ms": 1920.009856,
-      "algorithm_ms": 232.533435,
-      "worker_peak_rss_mb": 60.88671875,
-      "host_peak_rss_mb": 79.21484375,
-      "prepared_id": "90a12a4a914757d65c65b859",
-      "toolchain": {
-        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
-        "flags": [
-          "-std=c++17",
-          "-O2",
-          "-fPIC",
-          "-shared"
-        ],
-        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
-        "python": "3.14.4"
-      },
-      "metrics": {
-        "triangles": 7970,
-        "vertices": 4042,
-        "target_reached": true,
-        "algorithm_ms": 232.533435,
-        "evaluation_ms": 56.928049,
+        "algorithm_ms": 343.321118,
+        "evaluation_ms": 94.675306,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -766,16 +766,16 @@
       "project": "mesh-rust",
       "mode": "relive",
       "sample": 0,
-      "id": "20261024-152133-6b41e620",
-      "source_sha256": "eb6b3eea938edabdcdf69d68baf159f0059fc9a76bb1584303845c8e63b4eb62",
-      "compile_ms": 445.27908801683225,
-      "prepare_ms": 0.004992994945496321,
-      "worker_ms": 303.83985899970867,
-      "ready_ms": 927.994534,
-      "paint_ms": 991.471183,
-      "algorithm_ms": 203.520935,
-      "worker_peak_rss_mb": 59.9375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154754-ed87cee6",
+      "source_sha256": "d48ff5b25edced88ff1810ca2719c4ee07d6b04aa4a0180913f5b8335b6fa335",
+      "compile_ms": 529.4072449905798,
+      "prepare_ms": 0.017381011275574565,
+      "worker_ms": 588.6506820097566,
+      "ready_ms": 1344.686483,
+      "paint_ms": 1494.817759,
+      "algorithm_ms": 334.848627,
+      "worker_peak_rss_mb": 24.3125,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -797,8 +797,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 203.520935,
-        "evaluation_ms": 57.468263,
+        "algorithm_ms": 334.848627,
+        "evaluation_ms": 119.915236,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -807,16 +807,16 @@
       "project": "mesh-rust",
       "mode": "classic",
       "sample": 0,
-      "id": "20261024-152134-7c281415",
-      "source_sha256": "c0583f136e6bb8238b55cb11d3df61dad6d07e737974d5170dfaf0ed2b8477ff",
-      "compile_ms": 129.18193099903874,
-      "prepare_ms": 581.4750569988973,
-      "worker_ms": 259.6345689962618,
-      "ready_ms": 1170.76541,
-      "paint_ms": 1230.518366,
-      "algorithm_ms": 170.345518,
-      "worker_peak_rss_mb": 61.109375,
-      "host_peak_rss_mb": 79.15625,
+      "id": "20261024-154756-3861afa7",
+      "source_sha256": "c55637a8b86bcfeabcd5d654267884ced004679db6dc8e02ac78a5172b961588",
+      "compile_ms": 396.08550898265094,
+      "prepare_ms": 1637.0885689975694,
+      "worker_ms": 567.5808909873012,
+      "ready_ms": 2979.772539,
+      "paint_ms": 3179.297104,
+      "algorithm_ms": 346.776156,
+      "worker_peak_rss_mb": 61.1953125,
+      "host_peak_rss_mb": 79.05078125,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -838,8 +838,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 170.345518,
-        "evaluation_ms": 47.761553,
+        "algorithm_ms": 346.776156,
+        "evaluation_ms": 121.955032,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -848,16 +848,16 @@
       "project": "mesh-rust",
       "mode": "classic",
       "sample": 1,
-      "id": "20261024-152135-c012bdb3",
-      "source_sha256": "230c23a2f5965beaa10c6e3e1799172c0d11678606918ddf30faaad7c2a6929f",
-      "compile_ms": 141.78287700633518,
-      "prepare_ms": 564.9128259974532,
-      "worker_ms": 263.94739700481296,
-      "ready_ms": 1178.470067,
-      "paint_ms": 1258.603998,
-      "algorithm_ms": 168.587388,
-      "worker_peak_rss_mb": 62.234375,
-      "host_peak_rss_mb": 79.32421875,
+      "id": "20261024-154759-1935ab4f",
+      "source_sha256": "bec2ee08055b346bbcf785c8e9156ae082b16877219404fe1b8e897b7b3751f9",
+      "compile_ms": 314.3068680074066,
+      "prepare_ms": 1240.2345460141078,
+      "worker_ms": 539.3492270086426,
+      "ready_ms": 2384.72038,
+      "paint_ms": 2540.175108,
+      "algorithm_ms": 303.9195,
+      "worker_peak_rss_mb": 62.31640625,
+      "host_peak_rss_mb": 79.4765625,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -879,8 +879,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 168.587388,
-        "evaluation_ms": 55.692423,
+        "algorithm_ms": 303.9195,
+        "evaluation_ms": 131.234402,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -889,16 +889,16 @@
       "project": "mesh-rust",
       "mode": "relive",
       "sample": 1,
-      "id": "20261024-152136-76c99d6c",
-      "source_sha256": "44cb158690f6445b65bb701eecf1e3baef9bf4d0b12a5e8112188fa183645116",
-      "compile_ms": 217.33441000105813,
-      "prepare_ms": 0.003888999344781041,
-      "worker_ms": 321.77220401354134,
-      "ready_ms": 760.662975,
-      "paint_ms": 830.665426,
-      "algorithm_ms": 199.486717,
-      "worker_peak_rss_mb": 60.15625,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154802-62e59f79",
+      "source_sha256": "a369df6e4c88bebab81f083820e35301e1b601f20583102731587629892d3429",
+      "compile_ms": 229.27264199825004,
+      "prepare_ms": 0.0041009916458278894,
+      "worker_ms": 609.292686014669,
+      "ready_ms": 1106.296609,
+      "paint_ms": 1247.536538,
+      "algorithm_ms": 393.121103,
+      "worker_peak_rss_mb": 24.71484375,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -920,8 +920,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 199.486717,
-        "evaluation_ms": 57.198359,
+        "algorithm_ms": 393.121103,
+        "evaluation_ms": 121.233628,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -930,16 +930,16 @@
       "project": "mesh-rust",
       "mode": "relive",
       "sample": 2,
-      "id": "20261024-152137-0cda2675",
-      "source_sha256": "219facbe1117fd422941756bf4dbdde9239d81ad701f1e82c9876d28b90cb89f",
-      "compile_ms": 204.53094798722304,
-      "prepare_ms": 0.006950984243303537,
-      "worker_ms": 376.95254702703096,
-      "ready_ms": 772.690304,
-      "paint_ms": 821.398922,
-      "algorithm_ms": 271.897657,
-      "worker_peak_rss_mb": 59.77734375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154803-4caa277c",
+      "source_sha256": "1f68c1362de288b93bf624c084c92fc5704908d5141a47239b5bd2cbdb1fa5e2",
+      "compile_ms": 269.4729049981106,
+      "prepare_ms": 0.0037159770727157593,
+      "worker_ms": 569.955368002411,
+      "ready_ms": 1186.482908,
+      "paint_ms": 1400.177077,
+      "algorithm_ms": 380.114061,
+      "worker_peak_rss_mb": 24.40234375,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -961,8 +961,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 271.897657,
-        "evaluation_ms": 51.642288,
+        "algorithm_ms": 380.114061,
+        "evaluation_ms": 87.786158,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -971,16 +971,16 @@
       "project": "mesh-rust",
       "mode": "classic",
       "sample": 2,
-      "id": "20261024-152138-1f5070f1",
-      "source_sha256": "869fea67d015fd1d36788d06a36cfed8dc15c6179f19b5a2f799a2181afa30e7",
-      "compile_ms": 157.09321000031196,
-      "prepare_ms": 655.2686089999042,
-      "worker_ms": 305.47588600893505,
-      "ready_ms": 1316.30608,
-      "paint_ms": 1389.044741,
-      "algorithm_ms": 193.622377,
-      "worker_peak_rss_mb": 61.078125,
-      "host_peak_rss_mb": 79.109375,
+      "id": "20261024-154805-ea95accb",
+      "source_sha256": "7a0e5938645a6568c59c15f9857e452840ed58be3d74582991013d6b94faa36d",
+      "compile_ms": 288.08756000944413,
+      "prepare_ms": 1672.1525990287773,
+      "worker_ms": 592.1852129977196,
+      "ready_ms": 2834.20913,
+      "paint_ms": 3017.328279,
+      "algorithm_ms": 399.325548,
+      "worker_peak_rss_mb": 61.02734375,
+      "host_peak_rss_mb": 78.953125,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -1002,8 +1002,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 193.622377,
-        "evaluation_ms": 58.730364,
+        "algorithm_ms": 399.325548,
+        "evaluation_ms": 90.891232,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -1012,16 +1012,16 @@
       "project": "mesh-rust",
       "mode": "classic",
       "sample": 3,
-      "id": "20261024-152139-dcc63460",
-      "source_sha256": "f05bfea6cf87ad3887fbd007154828f5c7ff951984ed82b518f9801982f7c058",
-      "compile_ms": 165.1994870044291,
-      "prepare_ms": 540.5985669931397,
-      "worker_ms": 414.09872501390055,
-      "ready_ms": 1322.928154,
-      "paint_ms": 1387.780564,
-      "algorithm_ms": 290.57413,
-      "worker_peak_rss_mb": 61.23046875,
-      "host_peak_rss_mb": 79.10546875,
+      "id": "20261024-154808-7bc6356f",
+      "source_sha256": "16a465e58d6b624d04cc0f12e1359b6b45378c1871fa8a869df37c7cf48e18f9",
+      "compile_ms": 264.2813990241848,
+      "prepare_ms": 1193.3869569911622,
+      "worker_ms": 553.8900709943846,
+      "ready_ms": 2288.422464,
+      "paint_ms": 2418.357166,
+      "algorithm_ms": 332.038035,
+      "worker_peak_rss_mb": 62.2421875,
+      "host_peak_rss_mb": 78.203125,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -1043,8 +1043,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 290.57413,
-        "evaluation_ms": 68.803884,
+        "algorithm_ms": 332.038035,
+        "evaluation_ms": 123.115822,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -1053,16 +1053,16 @@
       "project": "mesh-rust",
       "mode": "relive",
       "sample": 3,
-      "id": "20261024-152141-17b0b859",
-      "source_sha256": "5b9a1e443f40c0d9c079fef6f2c5d71a67913c0789e4675fcd00f35270d602f1",
-      "compile_ms": 131.24888800666668,
-      "prepare_ms": 0.005502981366589665,
-      "worker_ms": 327.63391800108366,
-      "ready_ms": 651.943913,
-      "paint_ms": 724.479215,
-      "algorithm_ms": 217.738279,
-      "worker_peak_rss_mb": 60.03515625,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154810-daaa6a09",
+      "source_sha256": "2e91887cf21b65a1993dddb88d4c33fce1a3f152a3c7efd0a0905162d79151f2",
+      "compile_ms": 191.34635297814384,
+      "prepare_ms": 0.0030249939300119877,
+      "worker_ms": 566.2760179839097,
+      "ready_ms": 990.558076,
+      "paint_ms": 1155.047872,
+      "algorithm_ms": 361.466054,
+      "worker_peak_rss_mb": 24.65625,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -1084,8 +1084,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 217.738279,
-        "evaluation_ms": 62.470271,
+        "algorithm_ms": 361.466054,
+        "evaluation_ms": 101.727743,
         "rms_error": 0.0017146746986185244,
         "max_error": 0.013000202848638837
       }
@@ -1094,16 +1094,16 @@
       "project": "mesh-rust",
       "mode": "relive",
       "sample": 4,
-      "id": "20261024-152142-22ec6043",
-      "source_sha256": "55eca6f8309c28ac9441443a73035d0ca36f529efa608ff335e2b62b8300b522",
-      "compile_ms": 145.8892610098701,
-      "prepare_ms": 0.003762979758903384,
-      "worker_ms": 298.69191799662076,
-      "ready_ms": 651.423585,
-      "paint_ms": 730.615082,
-      "algorithm_ms": 205.201579,
-      "worker_peak_rss_mb": 59.58984375,
-      "host_peak_rss_mb": 79.03515625,
+      "id": "20261024-154811-044424b4",
+      "source_sha256": "df88002b9eea32e5a9c28aa00450b0aeaad07d91d58c9fdb0c76f18a768d5510",
+      "compile_ms": 262.1169589983765,
+      "prepare_ms": 0.0029059883672744036,
+      "worker_ms": 572.1803279884625,
+      "ready_ms": 1098.373336,
+      "paint_ms": 1257.911025,
+      "algorithm_ms": 369.418548,
+      "worker_peak_rss_mb": 24.34375,
+      "host_peak_rss_mb": 69.68359375,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -1125,8 +1125,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 205.201579,
-        "evaluation_ms": 48.251994,
+        "algorithm_ms": 369.418548,
+        "evaluation_ms": 102.46177,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -1135,16 +1135,16 @@
       "project": "mesh-rust",
       "mode": "classic",
       "sample": 4,
-      "id": "20261024-152142-8ad55209",
-      "source_sha256": "be35552726b7115712ff9737f630d5ea5f72b245a0c9ba1d2b1636910084a707",
-      "compile_ms": 145.22204201784916,
-      "prepare_ms": 707.6523469877429,
-      "worker_ms": 342.8147450031247,
-      "ready_ms": 1424.360683,
-      "paint_ms": 1482.964859,
-      "algorithm_ms": 230.680745,
-      "worker_peak_rss_mb": 61.05859375,
-      "host_peak_rss_mb": 78.875,
+      "id": "20261024-154813-e1cf29dc",
+      "source_sha256": "0c9e7744c62e998fae6b3d1637a9c2a2f78582d1d9ecd94c0e72339a5a5028a4",
+      "compile_ms": 357.81625198433176,
+      "prepare_ms": 1561.0463569755666,
+      "worker_ms": 548.231670021778,
+      "ready_ms": 2782.126501,
+      "paint_ms": 2957.750972,
+      "algorithm_ms": 353.84056,
+      "worker_peak_rss_mb": 61.18359375,
+      "host_peak_rss_mb": 79.2578125,
       "prepared_id": "90a12a4a914757d65c65b859",
       "toolchain": {
         "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
@@ -1166,8 +1166,8 @@
         "triangles": 7970,
         "vertices": 4042,
         "target_reached": true,
-        "algorithm_ms": 230.680745,
-        "evaluation_ms": 66.090232,
+        "algorithm_ms": 353.84056,
+        "evaluation_ms": 103.606886,
         "rms_error": 0.0021278972652280254,
         "max_error": 0.015575047942369462
       }
@@ -1176,51 +1176,51 @@
   "summary": {
     "netlist": {
       "relive": {
-        "median_ms": 1917.643972,
-        "p95_ms": 2489.165654,
-        "min_ms": 1317.071698,
-        "max_ms": 2489.165654
+        "median_ms": 1595.474585,
+        "p95_ms": 2369.361173,
+        "min_ms": 1171.223199,
+        "max_ms": 2369.361173
       },
       "classic": {
-        "median_ms": 3331.188127,
-        "p95_ms": 3601.181798,
-        "min_ms": 1934.813669,
-        "max_ms": 3601.181798
+        "median_ms": 2239.321232,
+        "p95_ms": 4252.024778,
+        "min_ms": 1717.72372,
+        "max_ms": 4252.024778
       },
-      "speedup": 1.7371254391532067,
-      "saved_ms": 1413.5441549999998
+      "speedup": 1.4035455362643712,
+      "saved_ms": 643.8466469999998
     },
     "mesh-cpp": {
       "relive": {
-        "median_ms": 1009.727296,
-        "p95_ms": 1138.572224,
-        "min_ms": 724.403852,
-        "max_ms": 1138.572224
+        "median_ms": 1474.584688,
+        "p95_ms": 1544.869024,
+        "min_ms": 1446.298363,
+        "max_ms": 1544.869024
       },
       "classic": {
-        "median_ms": 1601.660881,
-        "p95_ms": 1920.009856,
-        "min_ms": 1435.068472,
-        "max_ms": 1920.009856
+        "median_ms": 2935.790284,
+        "p95_ms": 3037.318727,
+        "min_ms": 2587.706682,
+        "max_ms": 3037.318727
       },
-      "speedup": 1.5862311411654657,
-      "saved_ms": 591.933585
+      "speedup": 1.9909268744556503,
+      "saved_ms": 1461.2055960000002
     },
     "mesh-rust": {
       "relive": {
-        "median_ms": 821.398922,
-        "p95_ms": 991.471183,
-        "min_ms": 724.479215,
-        "max_ms": 991.471183
+        "median_ms": 1257.911025,
+        "p95_ms": 1494.817759,
+        "min_ms": 1155.047872,
+        "max_ms": 1494.817759
       },
       "classic": {
-        "median_ms": 1387.780564,
-        "p95_ms": 1482.964859,
-        "min_ms": 1230.518366,
-        "max_ms": 1482.964859
+        "median_ms": 2957.750972,
+        "p95_ms": 3179.297104,
+        "min_ms": 2418.357166,
+        "max_ms": 3179.297104
       },
-      "speedup": 1.689532974575781,
-      "saved_ms": 566.3816419999999
+      "speedup": 2.3513196984659546,
+      "saved_ms": 1699.8399469999997
     }
   },
   "browser_errors": []

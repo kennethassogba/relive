@@ -4,17 +4,19 @@ Measured on 24 October 2026 on an Intel Core i7-8650U @ 1.90 GHz, 8 logical CPUs
 
 | Example | Relive median | Classic median | Ratio | Median time saved |
 | --- | ---: | ---: | ---: | ---: |
-| PicoRV32, C++ | 1,918 ms | 3,331 ms | 1.74× | 1,414 ms |
-| Jerry, C++ | 1,010 ms | 1,602 ms | 1.59× | 592 ms |
-| Jerry, Rust | 821 ms | 1,388 ms | 1.69× | 566 ms |
+| PicoRV32, C++ | 1,595 ms | 2,239 ms | 1.40× | 644 ms |
+| Jerry, C++ | 1,475 ms | 2,936 ms | 1.99× | 1,461 ms |
+| Jerry, Rust | 1,258 ms | 2,958 ms | 2.35× | 1,700 ms |
+
+Measured again after the workbench redesign. Other open Relive views were fixed on historical experiments so only the measurement browser acknowledged new results.
 
 Five measured source edits per mode and example, 30 measured edits in total. The order of the two modes alternates between repetitions. Each edit changes the native heuristic and adds a unique source comment, ensuring a fresh plugin build. Warmup runs and restoration of the original source are excluded. The report contains every measured sample, including slower runs.
 
 | Example | Relive range | Classic range |
 | --- | ---: | ---: |
-| PicoRV32, C++ | 1,317–2,489 ms | 1,935–3,601 ms |
-| Jerry, C++ | 724–1,139 ms | 1,435–1,920 ms |
-| Jerry, Rust | 724–991 ms | 1,231–1,483 ms |
+| PicoRV32, C++ | 1,171–2,369 ms | 1,718–4,252 ms |
+| Jerry, C++ | 1,446–1,545 ms | 2,588–3,037 ms |
+| Jerry, Rust | 1,155–1,495 ms | 2,418–3,179 ms |
 
 With only five samples, the nearest-rank p95 is the maximum observation. This small sample does not establish stable tail latency. Desktop activity, compiler page faults, swap pressure and software rendering contribute to variation. The measurements are not taken on an idle, isolated benchmark machine.
 
@@ -32,9 +34,9 @@ Observed process high-water RSS values during this measurement:
 
 | Example | Largest native worker | Largest prepared host |
 | --- | ---: | ---: |
-| PicoRV32 | 71.2 MiB | 90.0 MiB |
-| Jerry, C++ | 61.9 MiB | 79.2 MiB |
-| Jerry, Rust | 62.2 MiB | 79.3 MiB |
+| PicoRV32, C++ | 71.3 MiB | 89.7 MiB |
+| Jerry, C++ | 62.2 MiB | 79.4 MiB |
+| Jerry, Rust | 62.3 MiB | 79.5 MiB |
 
 These values come from Linux `wait4` / `getrusage`. They are **per-process RSS**, not whole-application memory. Shared copy-on-write pages appear in multiple processes' RSS, so adding the columns overcounts shared memory. Browser and compiler memory are separate and are not represented by this table.
 
