@@ -1,0 +1,27 @@
+{
+  "files": {
+    "ogre.obj": {
+      "bundle": "ogre.obj.gz",
+      "sha256": "4666c4a1bc1d11956edcbe7b401e90390e4bb404dc8c5572fb28560682998333"
+    },
+    "picorv32.json": {
+      "bundle": "picorv32.json.gz",
+      "sha256": "45cb89ab70e000e552e979a3c63de5e9afb53580487b2df89a1e78e7c5d1fa22"
+    }
+  },
+  "netlist": {
+    "source": "https://github.com/YosysHQ/picorv32",
+    "revision": "ef203c2b0a3fb793280f5114941416c425c5b461",
+    "license": "ISC",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+    "command": "read_verilog assets/picorv32.v; synth -top picorv32; write_json assets/picorv32.json"
+  },
+  "mesh": {
+    "source": "https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/",
+    "archive": "https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/ogre.zip",
+    "member": "bs_rest.obj",
+    "author": "Keenan Crane",
+    "license": "CC0-1.0",
+    "archive_sha256": "5a12d45f7793adac42cb6f5812396ab7dbc8095c29d84f7d6871384b94079957"
+  }
+}

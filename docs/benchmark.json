@@ -1,0 +1,1227 @@
+{
+  "date": "2026-10-24T13:20:47.074Z",
+  "machine": {
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+    "logical_cpus": 8,
+    "total_ram_mb": 7289
+  },
+  "browser": "156.0.8078.4",
+  "renderer": "Chromium headless / SwiftShader (software rendering)",
+  "samples_per_mode": 5,
+  "method": "Native source write to server receipt of browser acknowledgement after completed draw and two animation frames. Same watcher, flags, source semantics and warmed browser in both modes. Classic recompiles the plugin, starts a fresh host and prepares raw input. Relive retains prepared data. Both retain OS file caches and the prebuilt libigl engine. Unique source changes prevent plugin cache hits. Dataset acquisition/synthesis and initial engine compilation are excluded.",
+  "runs": [
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 0,
+      "id": "20261024-152048-69dc5876",
+      "source_sha256": "71a90b82c023c7dd871e6bdcb551501e8cb64bfba81d9ecf25eefd963d644389",
+      "compile_ms": 1560.609962005401,
+      "prepare_ms": 0.004272995283827186,
+      "worker_ms": 124.74012401071377,
+      "ready_ms": 1864.988594,
+      "paint_ms": 2489.165654,
+      "algorithm_ms": 9.786239999812096,
+      "worker_peak_rss_mb": 71.01171875,
+      "host_peak_rss_mb": 89.375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 9.786239999812096
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 0,
+      "id": "20261024-152050-23b6787b",
+      "source_sha256": "96ea8b5f75f75b9aed2e71671a9fe5bcfc9fae8570c35665db7beb5b788b6be6",
+      "compile_ms": 1607.0280560234096,
+      "prepare_ms": 1530.3163050266448,
+      "worker_ms": 110.37807000684552,
+      "ready_ms": 3455.014706,
+      "paint_ms": 3601.181798,
+      "algorithm_ms": 12.481225974624977,
+      "worker_peak_rss_mb": 71.171875,
+      "host_peak_rss_mb": 89.00390625,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 12.481225974624977
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 1,
+      "id": "20261024-152054-183b804c",
+      "source_sha256": "4cec1ad3a6b067d23d5d60f5ff3b7a68a627698ff6929356d3175a187d06ba17",
+      "compile_ms": 1611.6863840143196,
+      "prepare_ms": 1299.759499001084,
+      "worker_ms": 107.65877499943599,
+      "ready_ms": 3217.606101,
+      "paint_ms": 3331.188127,
+      "algorithm_ms": 9.921846009092405,
+      "worker_peak_rss_mb": 71.0546875,
+      "host_peak_rss_mb": 89.9140625,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 9.921846009092405
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 1,
+      "id": "20261024-152057-2c226ed3",
+      "source_sha256": "4d6c8f2652e88e1b18e621690bc91fb78b00c287e5d15f079e3a0fca4192aeba",
+      "compile_ms": 1529.5026350067928,
+      "prepare_ms": 0.0062280159909278154,
+      "worker_ms": 104.1747760027647,
+      "ready_ms": 1817.218322,
+      "paint_ms": 1917.643972,
+      "algorithm_ms": 14.583593001589179,
+      "worker_peak_rss_mb": 71.12890625,
+      "host_peak_rss_mb": 89.375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 14.583593001589179
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 2,
+      "id": "20261024-152059-e362b07f",
+      "source_sha256": "53a9acc19de95f53eed4c7c3c7767645a0078ab00ae560c03130f3f7ea8f47f6",
+      "compile_ms": 1660.455183009617,
+      "prepare_ms": 0.010980002116411924,
+      "worker_ms": 125.30532199889421,
+      "ready_ms": 1976.466734,
+      "paint_ms": 2069.947329,
+      "algorithm_ms": 13.003864994971082,
+      "worker_peak_rss_mb": 71.12109375,
+      "host_peak_rss_mb": 89.375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 13.003864994971082
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 2,
+      "id": "20261024-152101-c4003837",
+      "source_sha256": "eeef44892cb014334ff035b4ba86d8db175931da915be7663d398fad72aeac1f",
+      "compile_ms": 1670.7780199940316,
+      "prepare_ms": 1327.999531000387,
+      "worker_ms": 167.0328219770454,
+      "ready_ms": 3368.295142,
+      "paint_ms": 3458.4831,
+      "algorithm_ms": 10.351039993111044,
+      "worker_peak_rss_mb": 71.15234375,
+      "host_peak_rss_mb": 89.98046875,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 10.351039993111044
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 3,
+      "id": "20261024-152105-243a0852",
+      "source_sha256": "bee5c095223b8f666beeb5ee819e64814e2b0b535d16cbe4a97a7925606338b3",
+      "compile_ms": 1702.1731440036092,
+      "prepare_ms": 1298.6593609966803,
+      "worker_ms": 54.15351499686949,
+      "ready_ms": 3237.242661,
+      "paint_ms": 3293.308571,
+      "algorithm_ms": 5.972154991468415,
+      "worker_peak_rss_mb": 71.15234375,
+      "host_peak_rss_mb": 89.6328125,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 5.972154991468415
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 3,
+      "id": "20261024-152108-6ffb4167",
+      "source_sha256": "3849684692eb477f6353c5b55046c4cedb0f5ba430b92226fe6e6d053256ccaf",
+      "compile_ms": 1057.7247040055227,
+      "prepare_ms": 0.00221698428504169,
+      "worker_ms": 67.23064801190048,
+      "ready_ms": 1271.112682,
+      "paint_ms": 1317.071698,
+      "algorithm_ms": 9.378010989166796,
+      "worker_peak_rss_mb": 71.12109375,
+      "host_peak_rss_mb": 89.375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2679,
+        "connectivity": 3276,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2135,
+          1890
+        ],
+        "algorithm_ms": 9.378010989166796
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "relive",
+      "sample": 4,
+      "id": "20261024-152110-300b3265",
+      "source_sha256": "f89a9f149674882d36aafb136d0b162b4ab39f4114eb5a1cf3e0013367cad3f6",
+      "compile_ms": 970.0594149762765,
+      "prepare_ms": 0.0013630196917802095,
+      "worker_ms": 100.41257098782808,
+      "ready_ms": 1243.020887,
+      "paint_ms": 1338.729612,
+      "algorithm_ms": 6.532002007588744,
+      "worker_peak_rss_mb": 71.12109375,
+      "host_peak_rss_mb": 89.375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 6.532002007588744
+      }
+    },
+    {
+      "project": "netlist",
+      "mode": "classic",
+      "sample": 4,
+      "id": "20261024-152111-24fef9a3",
+      "source_sha256": "6a8d478bc814bc986ec340d1cce29d05ce1f43dc49b4d0fb69035e60e9d71520",
+      "compile_ms": 1013.8638839998748,
+      "prepare_ms": 657.4480900017079,
+      "worker_ms": 51.22389699681662,
+      "ready_ms": 1890.156726,
+      "paint_ms": 1934.813669,
+      "algorithm_ms": 6.0223659966140985,
+      "worker_peak_rss_mb": 71.14453125,
+      "host_peak_rss_mb": 89.87109375,
+      "prepared_id": "1665b1b43c486dae40d726cc",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "cut_nets": 2872,
+        "connectivity": 3330,
+        "balance": 0.05037,
+        "sizes": [
+          2226,
+          2226,
+          2130,
+          1895
+        ],
+        "algorithm_ms": 6.0223659966140985
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 0,
+      "id": "20261024-152117-732a9005",
+      "source_sha256": "5f0c9a94e8061ed71ae1f0c19a224d751f93b77285107b4dc3b26a2dcb7e6518",
+      "compile_ms": 317.085513001075,
+      "prepare_ms": 0.0034539843909442425,
+      "worker_ms": 271.31051002652384,
+      "ready_ms": 736.12838,
+      "paint_ms": 838.27496,
+      "algorithm_ms": 171.650364,
+      "worker_peak_rss_mb": 60.65234375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 171.650364,
+        "evaluation_ms": 54.24223,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 0,
+      "id": "20261024-152118-0b8b41ff",
+      "source_sha256": "211585d8a5765679653e03d1800bbe32113e7e29609aadfeb0de34b5e56f7484",
+      "compile_ms": 410.3575740009546,
+      "prepare_ms": 638.485412026057,
+      "worker_ms": 286.1171080148779,
+      "ready_ms": 1530.216482,
+      "paint_ms": 1601.660881,
+      "algorithm_ms": 186.876888,
+      "worker_peak_rss_mb": 61.87890625,
+      "host_peak_rss_mb": 78.98828125,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 186.876888,
+        "evaluation_ms": 59.557302,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 1,
+      "id": "20261024-152119-5032f483",
+      "source_sha256": "ca0e1cfc3898f5be382f8ccc5cf96bff256e5e905f056a01610f910143f02b4a",
+      "compile_ms": 334.5494150125887,
+      "prepare_ms": 580.6027459912002,
+      "worker_ms": 297.21628897823393,
+      "ready_ms": 1384.061556,
+      "paint_ms": 1435.068472,
+      "algorithm_ms": 202.459563,
+      "worker_peak_rss_mb": 61.0078125,
+      "host_peak_rss_mb": 79.09375,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 202.459563,
+        "evaluation_ms": 56.307643,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 1,
+      "id": "20261024-152121-a722a62f",
+      "source_sha256": "82f1fa57f00f159307863a7ea8d48ee308b67820a5c5e43a0a891872ff82156d",
+      "compile_ms": 227.3508209909778,
+      "prepare_ms": 0.014000979717820883,
+      "worker_ms": 240.06909198942594,
+      "ready_ms": 655.220574,
+      "paint_ms": 724.403852,
+      "algorithm_ms": 161.849363,
+      "worker_peak_rss_mb": 60.77734375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 161.849363,
+        "evaluation_ms": 48.160148,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 2,
+      "id": "20261024-152121-d7914202",
+      "source_sha256": "d5cab3885472bba636117326ecca120f8b742ee6dd962c1a822c0ee5ba896652",
+      "compile_ms": 371.5057650115341,
+      "prepare_ms": 0.003843975719064474,
+      "worker_ms": 357.7217500132974,
+      "ready_ms": 931.043453,
+      "paint_ms": 1009.727296,
+      "algorithm_ms": 245.134007,
+      "worker_peak_rss_mb": 60.65234375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 245.134007,
+        "evaluation_ms": 63.144431,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 2,
+      "id": "20261024-152123-d0aaa92f",
+      "source_sha256": "1f32a6d4dbc90b2fba95a1ea7bfe5540022620980025a2efe68dacce508f0619",
+      "compile_ms": 375.3038110153284,
+      "prepare_ms": 679.0053860167973,
+      "worker_ms": 294.49071298586205,
+      "ready_ms": 1521.91836,
+      "paint_ms": 1579.570896,
+      "algorithm_ms": 202.942408,
+      "worker_peak_rss_mb": 60.94140625,
+      "host_peak_rss_mb": 79.1171875,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 202.942408,
+        "evaluation_ms": 50.15273,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 3,
+      "id": "20261024-152124-420b78d7",
+      "source_sha256": "f7e420f4e9c6f60b149b99b6e01e8e3db0ae5b4eddc1048362e6e411d3fc8449",
+      "compile_ms": 302.9010360187385,
+      "prepare_ms": 678.790720005054,
+      "worker_ms": 350.7955470122397,
+      "ready_ms": 1538.635912,
+      "paint_ms": 1608.165868,
+      "algorithm_ms": 231.610636,
+      "worker_peak_rss_mb": 60.9921875,
+      "host_peak_rss_mb": 79.203125,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 231.610636,
+        "evaluation_ms": 64.063479,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 3,
+      "id": "20261024-152126-52d99bdc",
+      "source_sha256": "8753e01146b75b1e33cb1ab88db8d1ae3bea80a9a12347a730da13e163135d93",
+      "compile_ms": 422.9858949838672,
+      "prepare_ms": 0.003762019332498312,
+      "worker_ms": 410.8887790061999,
+      "ready_ms": 1034.019104,
+      "paint_ms": 1138.572224,
+      "algorithm_ms": 241.832174,
+      "worker_peak_rss_mb": 60.77734375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 241.832174,
+        "evaluation_ms": 77.549862,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "relive",
+      "sample": 4,
+      "id": "20261024-152127-b6a6e207",
+      "source_sha256": "f79f36f7aa31c6be92dd67ff8490b81da7b77b5db845afde1d696c778ced2d02",
+      "compile_ms": 443.35965599748306,
+      "prepare_ms": 0.002254004357382655,
+      "worker_ms": 380.3300159925129,
+      "ready_ms": 998.278905,
+      "paint_ms": 1069.87206,
+      "algorithm_ms": 246.577769,
+      "worker_peak_rss_mb": 60.65234375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 246.577769,
+        "evaluation_ms": 69.302146,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-cpp",
+      "mode": "classic",
+      "sample": 4,
+      "id": "20261024-152128-c8854446",
+      "source_sha256": "6ce86848d1e57824d369061091ac6a2db654b595b6dfbc0f03b2a99da6105f56",
+      "compile_ms": 470.1855329913087,
+      "prepare_ms": 801.075622002827,
+      "worker_ms": 363.80553399794735,
+      "ready_ms": 1821.341486,
+      "paint_ms": 1920.009856,
+      "algorithm_ms": 232.533435,
+      "worker_peak_rss_mb": 60.88671875,
+      "host_peak_rss_mb": 79.21484375,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "flags": [
+          "-std=c++17",
+          "-O2",
+          "-fPIC",
+          "-shared"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 232.533435,
+        "evaluation_ms": 56.928049,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "relive",
+      "sample": 0,
+      "id": "20261024-152133-6b41e620",
+      "source_sha256": "eb6b3eea938edabdcdf69d68baf159f0059fc9a76bb1584303845c8e63b4eb62",
+      "compile_ms": 445.27908801683225,
+      "prepare_ms": 0.004992994945496321,
+      "worker_ms": 303.83985899970867,
+      "ready_ms": 927.994534,
+      "paint_ms": 991.471183,
+      "algorithm_ms": 203.520935,
+      "worker_peak_rss_mb": 59.9375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 203.520935,
+        "evaluation_ms": 57.468263,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "classic",
+      "sample": 0,
+      "id": "20261024-152134-7c281415",
+      "source_sha256": "c0583f136e6bb8238b55cb11d3df61dad6d07e737974d5170dfaf0ed2b8477ff",
+      "compile_ms": 129.18193099903874,
+      "prepare_ms": 581.4750569988973,
+      "worker_ms": 259.6345689962618,
+      "ready_ms": 1170.76541,
+      "paint_ms": 1230.518366,
+      "algorithm_ms": 170.345518,
+      "worker_peak_rss_mb": 61.109375,
+      "host_peak_rss_mb": 79.15625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 170.345518,
+        "evaluation_ms": 47.761553,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "classic",
+      "sample": 1,
+      "id": "20261024-152135-c012bdb3",
+      "source_sha256": "230c23a2f5965beaa10c6e3e1799172c0d11678606918ddf30faaad7c2a6929f",
+      "compile_ms": 141.78287700633518,
+      "prepare_ms": 564.9128259974532,
+      "worker_ms": 263.94739700481296,
+      "ready_ms": 1178.470067,
+      "paint_ms": 1258.603998,
+      "algorithm_ms": 168.587388,
+      "worker_peak_rss_mb": 62.234375,
+      "host_peak_rss_mb": 79.32421875,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 168.587388,
+        "evaluation_ms": 55.692423,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "relive",
+      "sample": 1,
+      "id": "20261024-152136-76c99d6c",
+      "source_sha256": "44cb158690f6445b65bb701eecf1e3baef9bf4d0b12a5e8112188fa183645116",
+      "compile_ms": 217.33441000105813,
+      "prepare_ms": 0.003888999344781041,
+      "worker_ms": 321.77220401354134,
+      "ready_ms": 760.662975,
+      "paint_ms": 830.665426,
+      "algorithm_ms": 199.486717,
+      "worker_peak_rss_mb": 60.15625,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 199.486717,
+        "evaluation_ms": 57.198359,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "relive",
+      "sample": 2,
+      "id": "20261024-152137-0cda2675",
+      "source_sha256": "219facbe1117fd422941756bf4dbdde9239d81ad701f1e82c9876d28b90cb89f",
+      "compile_ms": 204.53094798722304,
+      "prepare_ms": 0.006950984243303537,
+      "worker_ms": 376.95254702703096,
+      "ready_ms": 772.690304,
+      "paint_ms": 821.398922,
+      "algorithm_ms": 271.897657,
+      "worker_peak_rss_mb": 59.77734375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 271.897657,
+        "evaluation_ms": 51.642288,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "classic",
+      "sample": 2,
+      "id": "20261024-152138-1f5070f1",
+      "source_sha256": "869fea67d015fd1d36788d06a36cfed8dc15c6179f19b5a2f799a2181afa30e7",
+      "compile_ms": 157.09321000031196,
+      "prepare_ms": 655.2686089999042,
+      "worker_ms": 305.47588600893505,
+      "ready_ms": 1316.30608,
+      "paint_ms": 1389.044741,
+      "algorithm_ms": 193.622377,
+      "worker_peak_rss_mb": 61.078125,
+      "host_peak_rss_mb": 79.109375,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 193.622377,
+        "evaluation_ms": 58.730364,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "classic",
+      "sample": 3,
+      "id": "20261024-152139-dcc63460",
+      "source_sha256": "f05bfea6cf87ad3887fbd007154828f5c7ff951984ed82b518f9801982f7c058",
+      "compile_ms": 165.1994870044291,
+      "prepare_ms": 540.5985669931397,
+      "worker_ms": 414.09872501390055,
+      "ready_ms": 1322.928154,
+      "paint_ms": 1387.780564,
+      "algorithm_ms": 290.57413,
+      "worker_peak_rss_mb": 61.23046875,
+      "host_peak_rss_mb": 79.10546875,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 290.57413,
+        "evaluation_ms": 68.803884,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "relive",
+      "sample": 3,
+      "id": "20261024-152141-17b0b859",
+      "source_sha256": "5b9a1e443f40c0d9c079fef6f2c5d71a67913c0789e4675fcd00f35270d602f1",
+      "compile_ms": 131.24888800666668,
+      "prepare_ms": 0.005502981366589665,
+      "worker_ms": 327.63391800108366,
+      "ready_ms": 651.943913,
+      "paint_ms": 724.479215,
+      "algorithm_ms": 217.738279,
+      "worker_peak_rss_mb": 60.03515625,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 217.738279,
+        "evaluation_ms": 62.470271,
+        "rms_error": 0.0017146746986185244,
+        "max_error": 0.013000202848638837
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "relive",
+      "sample": 4,
+      "id": "20261024-152142-22ec6043",
+      "source_sha256": "55eca6f8309c28ac9441443a73035d0ca36f529efa608ff335e2b62b8300b522",
+      "compile_ms": 145.8892610098701,
+      "prepare_ms": 0.003762979758903384,
+      "worker_ms": 298.69191799662076,
+      "ready_ms": 651.423585,
+      "paint_ms": 730.615082,
+      "algorithm_ms": 205.201579,
+      "worker_peak_rss_mb": 59.58984375,
+      "host_peak_rss_mb": 79.03515625,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 205.201579,
+        "evaluation_ms": 48.251994,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    },
+    {
+      "project": "mesh-rust",
+      "mode": "classic",
+      "sample": 4,
+      "id": "20261024-152142-8ad55209",
+      "source_sha256": "be35552726b7115712ff9737f630d5ea5f72b245a0c9ba1d2b1636910084a707",
+      "compile_ms": 145.22204201784916,
+      "prepare_ms": 707.6523469877429,
+      "worker_ms": 342.8147450031247,
+      "ready_ms": 1424.360683,
+      "paint_ms": 1482.964859,
+      "algorithm_ms": 230.680745,
+      "worker_peak_rss_mb": 61.05859375,
+      "host_peak_rss_mb": 78.875,
+      "prepared_id": "90a12a4a914757d65c65b859",
+      "toolchain": {
+        "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+        "flags": [
+          "--crate-name",
+          "relive_plugin",
+          "--crate-type",
+          "cdylib",
+          "--edition=2021",
+          "-C",
+          "opt-level=2",
+          "-C",
+          "panic=abort"
+        ],
+        "platform": "Linux-7.3.0-lat7490-rfc1-x86_64-with-glibc2.43",
+        "python": "3.14.4"
+      },
+      "metrics": {
+        "triangles": 7970,
+        "vertices": 4042,
+        "target_reached": true,
+        "algorithm_ms": 230.680745,
+        "evaluation_ms": 66.090232,
+        "rms_error": 0.0021278972652280254,
+        "max_error": 0.015575047942369462
+      }
+    }
+  ],
+  "summary": {
+    "netlist": {
+      "relive": {
+        "median_ms": 1917.643972,
+        "p95_ms": 2489.165654,
+        "min_ms": 1317.071698,
+        "max_ms": 2489.165654
+      },
+      "classic": {
+        "median_ms": 3331.188127,
+        "p95_ms": 3601.181798,
+        "min_ms": 1934.813669,
+        "max_ms": 3601.181798
+      },
+      "speedup": 1.7371254391532067,
+      "saved_ms": 1413.5441549999998
+    },
+    "mesh-cpp": {
+      "relive": {
+        "median_ms": 1009.727296,
+        "p95_ms": 1138.572224,
+        "min_ms": 724.403852,
+        "max_ms": 1138.572224
+      },
+      "classic": {
+        "median_ms": 1601.660881,
+        "p95_ms": 1920.009856,
+        "min_ms": 1435.068472,
+        "max_ms": 1920.009856
+      },
+      "speedup": 1.5862311411654657,
+      "saved_ms": 591.933585
+    },
+    "mesh-rust": {
+      "relive": {
+        "median_ms": 821.398922,
+        "p95_ms": 991.471183,
+        "min_ms": 724.479215,
+        "max_ms": 991.471183
+      },
+      "classic": {
+        "median_ms": 1387.780564,
+        "p95_ms": 1482.964859,
+        "min_ms": 1230.518366,
+        "max_ms": 1482.964859
+      },
+      "speedup": 1.689532974575781,
+      "saved_ms": 566.3816419999999
+    }
+  },
+  "browser_errors": []
+}

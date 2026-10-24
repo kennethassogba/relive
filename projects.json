@@ -1,0 +1,5 @@
+{
+  "netlist": {"title":"PicoRV32", "dataset":"netlist", "language":"cpp", "source":"examples/netlist/partition.cpp", "params":{"parts":4,"passes":12,"seed":42,"imbalance":0.05}},
+  "mesh-cpp": {"title":"Jerry the ogre", "dataset":"mesh", "language":"cpp", "source":"examples/mesh/criterion.cpp", "engine":true, "params":{"ratio":0.2,"feature_weight":40}},
+  "mesh-rust": {"title":"Jerry the ogre", "dataset":"mesh", "language":"rust", "source":"examples/mesh/criterion.rs", "engine":true, "params":{"ratio":0.2,"feature_weight":40}}
+}

@@ -1,0 +1,15 @@
+.venv/
+.tools/
+.relive/
+node_modules/
+web/dist/
+third_party/libigl/
+third_party/libigl.tar.gz
+__pycache__/
+.pytest_cache/
+*.pyc
+output/
+assets/picorv32.json
+assets/ogre.obj
+assets/ogre.zip
+.playwright-cli/
